@@ -47,3 +47,27 @@
 .rounded-card-lg {
   border-radius: 30px;
 }
+
+/* Temporary development banner */
+.dev-banner-sheen {
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(87, 184, 54, 0.22) 40%,
+    rgba(0, 167, 199, 0.22) 60%,
+    transparent 80%
+  );
+  background-size: 250% 100%;
+  animation: dev-banner-sheen 7s linear infinite;
+}
+
+@keyframes dev-banner-sheen {
+  from { background-position: 150% 0; }
+  to { background-position: -150% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dev-banner-sheen {
+    animation: none;
+  }
+}

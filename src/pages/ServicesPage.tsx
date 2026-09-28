@@ -346,7 +346,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
       </motion.section>
 
       {/* 4. Comparison Table (Apex vs In-House vs Offshore) */}
-      <section id="comparison" className="space-y-6 pt-4 scroll-mt-24">
+      <section id="comparison" className="space-y-6 pt-4 scroll-mt-[calc(var(--dev-banner-height,0px)_+_6rem)]">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
             Strategic Comparison

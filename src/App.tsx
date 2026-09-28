@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { AuditModal } from './components/AuditModal';
+import { DevBanner } from './components/DevBanner';
 import { HomePage } from './pages/HomePage';
 import { AboutUsPage } from './pages/AboutUsPage';
 import { ServicesPage } from './pages/ServicesPage';
@@ -29,6 +30,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#F8FAF7] text-[#1E2423] selection:bg-[#57B836] selection:text-[#F8FAF7] flex flex-col font-sans-clean">
+      {/* Temporary Development Notice */}
+      <DevBanner />
+
       {/* Floating Minimal Navigation */}
       <Navbar onOpenAudit={handleOpenAudit} />
 

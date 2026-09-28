@@ -21,7 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className="sticky top-4 z-40 w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <header className="sticky top-[calc(var(--dev-banner-height,0px)_+_1rem)] z-40 w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="flex items-center justify-between px-6 py-3 bg-white/95 backdrop-blur-md rounded-full border border-[#E2E7DF] shadow-[0_4px_24px_rgba(87,184,54,0.08)] transition-all">
         {/* Left: Brand Wordmark */}
         <Link
