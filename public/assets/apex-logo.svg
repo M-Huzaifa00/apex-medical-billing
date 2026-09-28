@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 160" width="540" height="160" fill="none">
+  <defs>
+    <linearGradient id="apexGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#67C63D"/>
+      <stop offset="100%" stop-color="#459F23"/>
+    </linearGradient>
+    <linearGradient id="apexTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B8DC"/>
+      <stop offset="100%" stop-color="#008EA7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cross Emblem (Left) -->
+  <g transform="translate(10, 10)">
+    <!-- Top Green Ribbon -->
+    <path d="M 58 4 C 68 4 82 12 82 34 C 82 52 74 64 62 76 C 59 79 56 80 52 78 C 50 76 52 70 54 62 C 58 46 54 36 46 22 C 43 16 48 4 58 4 Z" fill="url(#apexGreen)"/>
+    <!-- Left Green Ribbon -->
+    <path d="M 4 82 C 4 72 12 58 34 58 C 52 58 64 66 76 78 C 79 81 80 84 78 88 C 76 90 70 88 62 86 C 46 82 36 86 22 94 C 16 97 4 92 4 82 Z" fill="url(#apexGreen)"/>
+    <!-- Right Cyan Ribbon -->
+    <path d="M 136 58 C 136 68 128 82 106 82 C 88 82 76 74 64 62 C 61 59 60 56 62 52 C 64 50 70 52 78 54 C 94 58 104 54 118 46 C 124 43 136 48 136 58 Z" fill="url(#apexTeal)"/>
+    <!-- Bottom Cyan Ribbon -->
+    <path d="M 82 136 C 72 136 58 128 58 106 C 58 88 66 76 78 64 C 81 61 84 60 88 62 C 90 64 88 70 86 78 C 82 94 86 104 94 118 C 97 124 92 136 82 136 Z" fill="url(#apexTeal)"/>
+    <!-- Overlap Shadows -->
+    <path d="M 48 20 C 58 42 66 54 84 66 C 74 68 64 64 56 54 C 48 44 46 32 48 20 Z" fill="#459F23" opacity="0.3"/>
+    <path d="M 120 48 C 98 58 86 66 74 84 C 72 74 76 64 86 56 C 96 48 108 46 120 48 Z" fill="#008EA7" opacity="0.3"/>
+  </g>
+
+  <!-- Typography: APEX (Right) -->
+  <g transform="translate(180, 20)">
+    <!-- 'A' stylized inverted chevron -->
+    <path d="M 2 92 L 36 6 L 50 6 L 84 92 L 66 92 L 43 32 L 20 92 Z" fill="#262A2B"/>
+    <!-- 'P' -->
+    <path d="M 96 6 L 138 6 C 158 6 172 18 172 37 C 172 56 158 67 138 67 L 114 67 L 114 92 L 96 92 Z M 114 22 L 114 51 L 136 51 C 146 51 154 46 154 37 C 154 27 146 22 136 22 Z" fill="#262A2B"/>
+    <!-- 'E' with distinct horizontal bars -->
+    <path d="M 188 6 L 244 6 L 244 22 L 206 22 L 206 41 L 238 41 L 238 56 L 206 56 L 206 76 L 246 76 L 246 92 L 188 92 Z" fill="#262A2B"/>
+    <!-- 'X' -->
+    <path d="M 258 6 L 278 6 L 298 47 L 318 6 L 338 6 L 308 50 L 340 92 L 320 92 L 298 55 L 276 92 L 256 92 L 288 49 Z" fill="#262A2B"/>
+
+    <!-- Green Accent Bar -->
+    <rect x="0" y="104" width="342" height="4" rx="2" fill="#57B836"/>
+
+    <!-- 'MEDICAL BILLING' -->
+    <text x="0" y="132" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="21" font-weight="700" letter-spacing="8" fill="#262A2B">MEDICAL BILLING</text>
+  </g>
+</svg>

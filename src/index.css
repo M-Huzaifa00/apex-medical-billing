@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Instrument Serif', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --brand-primary: #57B836;
+    --brand-secondary: #00A7C7;
+    --brand-dark: #0E2925;
+    --brand-charcoal: #262A2B;
+    --brand-tint: #EAF7E6;
+    --brand-teal-tint: #E6F7FA;
+    --brand-cream: #F8FAF7;
+    --brand-beige: #E2E7DF;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F8FAF7;
+    color: #1E2423;
+    overflow-x: hidden;
+  }
+
+  h1, h2, .font-editorial {
+    font-family: var(--font-serif);
+    font-feature-settings: "cv01", "ss01";
+  }
+}
+
+.font-editorial {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Custom rounded utility matching ClinicHub */
+.rounded-section {
+  border-radius: 36px;
+}
+
+.rounded-card {
+  border-radius: 24px;
+}
+
+.rounded-card-lg {
+  border-radius: 30px;
+}
