@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle2, ShieldCheck, ArrowRight, Clock, FileSpreadsheet } from 'lucide-react';
+import { X, CheckCircle2, ShieldCheck, ArrowRight, Clock, FileSpreadsheet, AlertCircle } from 'lucide-react';
 import { ApexLogo } from './ApexLogo';
 import { cubicEase } from '../utils/animations';
+import { useFormSubmission } from '../hooks/useFormSubmission';
+import { isFilled, isValidEmail, isValidPhone } from '../utils/formValidation';
 
 interface AuditModalProps {
   isOpen: boolean;
@@ -22,20 +24,35 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
     phone: '',
     notes: '',
   });
-  const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { submit, isSubmitting, isSuccess, errorMessage, reset, honeypotProps } = useFormSubmission();
+
+  const isProfileComplete = isFilled(formData.practiceName);
+  const isContactComplete =
+    isFilled(formData.providerName) && isValidPhone(formData.phone) && isValidEmail(formData.workEmail);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-    }, 600);
+    if (!isProfileComplete || !isContactComplete) return;
+    submit({
+      subject: `New Billing Audit Request: ${formData.practiceName}`,
+      fromName: 'Apex Website – Audit Modal',
+      replyTo: formData.workEmail,
+      fields: {
+        'Practice Name': formData.practiceName,
+        'Specialty': formData.specialty,
+        'Monthly Collections': formData.monthlyVolume,
+        'EHR / Practice Management': formData.ehrSystem,
+        'Primary Friction Point': formData.biggestChallenge || '—',
+        'Name & Title': formData.providerName,
+        'Phone': formData.phone,
+        'Work Email': formData.workEmail,
+        'Notes / Payer Concerns': formData.notes || '—',
+      },
+    });
   };
 
   const resetAndClose = () => {
-    setSubmitted(false);
+    reset();
     setStep(1);
     onClose();
   };
@@ -77,7 +94,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
               <X className="w-5 h-5" />
             </button>
 
-            {!submitted ? (
+            {!isSuccess ? (
               <div>
                 {/* Header */}
                 <div className="mb-6">
@@ -113,13 +130,14 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
                   </div>
                 </div>
 
-                <form onSubmit={step === 1 ? (e) => { e.preventDefault(); setStep(2); } : handleSubmit} className="space-y-4">
+                <form onSubmit={step === 1 ? (e) => { e.preventDefault(); if (isProfileComplete) setStep(2); } : handleSubmit} className="space-y-4">
+                  <input {...honeypotProps} />
                   {step === 1 ? (
                     <>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                           <label className="block text-xs font-semibold text-[#1E2423] mb-1.5">
-                            Practice or Clinic Name
+                            Practice or Clinic Name <span className="text-red-500" aria-hidden="true">*</span>
                           </label>
                           <input
                             type="text"
@@ -220,19 +238,25 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
                       <div className="pt-4 flex justify-end">
                         <button
                           type="submit"
-                          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#57B836] text-white text-sm font-medium hover:bg-[#0E2925] transition-colors shadow-sm cursor-pointer"
+                          disabled={!isProfileComplete}
+                          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#57B836] text-white text-sm font-medium hover:bg-[#0E2925] transition-colors shadow-sm cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#57B836]"
                         >
                           <span>Continue to Schedule</span>
                           <ArrowRight className="w-4 h-4" />
                         </button>
                       </div>
+                      {!isProfileComplete && (
+                        <p className="text-right text-[11px] text-[#747773]">
+                          Enter your practice name to continue.
+                        </p>
+                      )}
                     </>
                   ) : (
                     <>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                           <label className="block text-xs font-semibold text-[#1E2423] mb-1.5">
-                            Your Name & Title
+                            Your Name & Title <span className="text-red-500" aria-hidden="true">*</span>
                           </label>
                           <input
                             type="text"
@@ -245,7 +269,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
                         </div>
                         <div>
                           <label className="block text-xs font-semibold text-[#1E2423] mb-1.5">
-                            Direct Phone
+                            Direct Phone <span className="text-red-500" aria-hidden="true">*</span>
                           </label>
                           <input
                             type="tel"
@@ -260,7 +284,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
 
                       <div>
                         <label className="block text-xs font-semibold text-[#1E2423] mb-1.5">
-                          Professional Work Email
+                          Professional Work Email <span className="text-red-500" aria-hidden="true">*</span>
                         </label>
                         <input
                           type="email"
@@ -292,6 +316,16 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
                         </span>
                       </div>
 
+                      {errorMessage && (
+                        <div
+                          role="alert"
+                          className="p-3 bg-red-50 rounded-xl border border-red-200 flex items-start gap-3 text-xs text-red-700"
+                        >
+                          <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                          <span>{errorMessage}</span>
+                        </div>
+                      )}
+
                       <div className="pt-2 flex items-center justify-between">
                         <button
                           type="button"
@@ -302,12 +336,17 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
                         </button>
                         <button
                           type="submit"
-                          disabled={isSubmitting}
-                          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#57B836] text-white text-sm font-medium hover:bg-[#0E2925] transition-colors shadow-sm disabled:opacity-50 cursor-pointer"
+                          disabled={isSubmitting || !isContactComplete}
+                          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#57B836] text-white text-sm font-medium hover:bg-[#0E2925] transition-colors shadow-sm cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#57B836]"
                         >
                           {isSubmitting ? 'Preparing Your Audit...' : 'Submit Audit Request'}
                         </button>
                       </div>
+                      {!isContactComplete && (
+                        <p className="text-right text-[11px] text-[#747773]">
+                          Fill in your name, a valid phone number, and a valid work email to submit.
+                        </p>
+                      )}
                     </>
                   )}
                 </form>

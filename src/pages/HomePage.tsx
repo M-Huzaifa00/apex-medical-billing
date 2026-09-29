@@ -16,43 +16,43 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
   const pageGateways = [
     {
       title: 'About Us',
-      subtitle: 'Our Team & Mission',
+      subtitle: 'The People Behind Apex',
       to: '/about-us',
       description:
-        'Founded by practice administrators and physician advisors. 100% US-based certified coders with zero offshore outsourcing.',
-      cta: 'Learn About Our Team',
+        'Apex Medical Billing helps healthcare practices manage the work behind getting paid, with a focus on accurate billing, consistent follow-up, and careful payment reconciliation.',
+      cta: 'Meet Our Team',
       icon: Users,
-      badge: '100% US-Based',
+      badge: '100% HIPAA-Compliant',
     },
     {
-      title: 'Services',
-      subtitle: 'End-to-End RCM',
+      title: 'Our Services',
+      subtitle: 'Support at Every Step',
       to: '/services',
       description:
-        'Medical billing, certified AAPC coding, aggressive denial appeals, aging A/R recovery, and payment reconciliation.',
-      cta: 'Explore All Services',
+        'Get help with medical billing, accounts receivable follow-up, account reconciliation, quality assurance, and customer support. Five connected services to keep your billing process on track.',
+      cta: 'Explore Our Services',
       icon: Sparkles,
       badge: '98% Clean Claims',
     },
     {
       title: 'Why Choose Us',
-      subtitle: 'The Apex Advantage',
+      subtitle: 'The Apex Approach',
       to: '/why-choose-us',
       description:
-        '48-hour denial appeals, zero EHR migration friction, dedicated 4-person pods, and transparent real-time reporting.',
-      cta: 'See The Apex Advantage',
+        'Small billing errors can become costly delays. We check the details, follow up on unresolved claims, and reconcile payments to help protect your practice’s revenue.',
+      cta: 'See How We Work',
       icon: ShieldCheck,
-      badge: '48-Hr Denial SLA',
+      badge: '24-Hour Claim Submission',
     },
     {
       title: 'Contact Us',
-      subtitle: 'Practice Consultation',
+      subtitle: 'Let’s Talk About Your Practice',
       to: '/contact-us',
       description:
-        'Connect directly with practice revenue directors or schedule your confidential 48-hour clinical billing audit.',
-      cta: 'Get in Touch',
+        'Dealing with unpaid claims or a growing billing backlog? Tell us what’s getting in the way, and we’ll talk through how Apex can help.',
+      cta: 'Get Free Practice Audit',
       icon: PhoneCall,
-      badge: 'Fast Response',
+      badge: 'Free Consultation',
     },
   ];
 
@@ -71,13 +71,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
       <section className="px-4 sm:px-6 lg:px-8 py-10 max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
           <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
-            Practice Revenue Solutions
+            Get to Know Apex
           </span>
           <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925]">
-            Everything Your Practice Needs to Thrive
+            Complete Billing Support for a Thriving Practice
           </h2>
           <p className="text-sm text-[#747773]">
-            Explore our specialized capabilities designed for independent healthcare providers.
+            Meet our team, explore our services, and find the support your practice needs.
           </p>
         </div>
 
@@ -94,11 +94,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
                 className="rounded-[28px] bg-white border border-[#E2E7DF] p-7 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
               >
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-2xl bg-[#57B836]/10 text-[#57B836] flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="w-12 h-12 shrink-0 rounded-2xl bg-[#57B836]/10 text-[#57B836] flex items-center justify-center group-hover:scale-105 transition-transform">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-semibold text-[#57B836] bg-[#EAF7E6] px-2.5 py-1 rounded-full">
+                    <span className="text-[11px] font-semibold text-center leading-tight text-[#57B836] bg-[#EAF7E6] px-2.5 py-1 rounded-full">
                       {item.badge}
                     </span>
                   </div>

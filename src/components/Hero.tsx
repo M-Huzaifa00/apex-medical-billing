@@ -48,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
               ))}
             </div>
             <span className="text-white/80">·</span>
-            <span className="tracking-wide">Trusted by 240+ Healthcare Practices</span>
+            <span className="tracking-wide">Serving Healthcare Practices Across 15+ U.S. States</span>
           </div>
         </motion.div>
 
@@ -62,8 +62,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
               transition={{ duration: 0.8, delay: 0.3, ease: cubicEase }}
               className="text-4xl sm:text-6xl lg:text-7xl font-editorial text-[#F8FAF7] leading-[1.05] tracking-tight text-balance"
             >
-              Medical Billing, <br />
-              Without the <span className="italic font-normal text-[#EAF7E6]">Revenue Headaches</span>.
+              Accurate Medical Billing, <br />
+              Stronger Practice <span className="italic font-normal text-[#EAF7E6]">Revenue</span>
             </motion.h1>
 
             <motion.p
@@ -72,7 +72,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
               transition={{ duration: 0.8, delay: 0.45, ease: cubicEase }}
               className="mt-5 sm:mt-6 text-base sm:text-lg text-[#F8FAF7]/85 font-normal leading-relaxed max-w-xl"
             >
-              We help healthcare providers submit cleaner claims, reduce denials, collect payments faster, and take control of their entire revenue cycle.
+              Billing backlogs take time your team needs elsewhere. Apex Medical Billing manages billing, follows up on outstanding claims, and reconciles payments to help your practice improve its collections.
             </motion.p>
 
             <motion.div
@@ -85,7 +85,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
                 onClick={onOpenAudit}
                 className="px-7 py-3.5 rounded-full bg-[#F8FAF7] text-[#0E2925] text-sm font-semibold hover:bg-white transition-all shadow-md hover:shadow-lg active:scale-[0.98] inline-flex items-center gap-2 group cursor-pointer"
               >
-                <span>Get a Free Billing Audit</span>
+                <span>Get Free Practice Audit</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
 
@@ -104,16 +104,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
               className="mt-8 flex items-center gap-5 text-xs text-[#F8FAF7]/70"
             >
               <div className="flex items-center gap-1.5">
-                <CheckCircle className="w-4 h-4 text-[#EAF7E6]" />
-                <span>Dedicated Billing Specialist</span>
-              </div>
-              <span className="text-white/40">·</span>
-              <div className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-[#EAF7E6]" />
                 <span>100% HIPAA-Compliant</span>
               </div>
+              <span className="text-white/40">·</span>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle className="w-4 h-4 text-[#EAF7E6]" />
+                <span>Ongoing A/R Follow-Up</span>
+              </div>
               <span className="text-white/40 hidden sm:inline">·</span>
-              <span className="hidden sm:inline">No Long-Term Lock-in</span>
+              <span className="hidden sm:inline">Dedicated Billing Support</span>
             </motion.div>
           </div>
 
@@ -128,10 +128,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
               <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#E2E7DF]">
                 <div>
                   <span className="text-[11px] font-semibold tracking-wider text-[#747773] uppercase">
-                    Practice Benchmark
+                    Your Revenue at a Glance
                   </span>
                   <h4 className="text-base font-semibold text-[#0E2925] mt-0.5">
-                    Revenue Performance
+                    Practice Performance
                   </h4>
                 </div>
                 <div className="w-8 h-8 rounded-full bg-[#57B836]/10 text-[#57B836] flex items-center justify-center">
@@ -143,28 +143,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-[#747773]">Claims Processed</span>
                   <span className="text-sm font-semibold font-mono text-[#1E2423] tabular-nums">
-                    1,248
+                    1,250
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-[#747773]">Clean Claim Rate</span>
                   <span className="text-sm font-bold font-mono text-[#57B836] tabular-nums">
-                    96.8%
+                    98%
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between pt-2 border-t border-[#E2E7DF]/80">
-                  <span className="text-xs font-medium text-[#1E2423]">Collections</span>
+                  <span className="text-xs font-medium text-[#1E2423]">Payments Collected</span>
                   <span className="text-base font-bold font-mono text-[#0E2925] tabular-nums">
-                    $284,650
+                    $185,000
                   </span>
                 </div>
-              </div>
-
-              <div className="mt-4 pt-3 border-t border-[#E2E7DF] text-[10px] text-[#747773] flex items-center justify-between">
-                <span>Month-to-date summary</span>
-                <span className="text-[#57B836] font-medium">+14.2% vs prior</span>
               </div>
             </div>
           </motion.div>

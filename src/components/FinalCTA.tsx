@@ -39,7 +39,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenAudit }) => {
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#EAF7E6]"
           >
             <ShieldCheck className="w-4 h-4 text-[#EAF7E6]" />
-            <span>Risk-Free Practice Evaluation</span>
+            <span>Risk-Free Revenue Assessment</span>
           </motion.div>
 
           <motion.h2
@@ -49,8 +49,8 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenAudit }) => {
             transition={{ duration: 0.8, delay: 0.25, ease: cubicEase }}
             className="text-3xl sm:text-5xl lg:text-6xl font-editorial font-normal leading-[1.1] text-white text-balance"
           >
-            Your Practice Provides the Care. <br />
-            <span className="italic font-normal text-[#EAF7E6]">We’ll Handle the Billing</span>.
+            You’ve Done the Work. <br />
+            <span className="italic font-normal text-[#EAF7E6]">Let’s Get Your Practice Paid</span>.
           </motion.h2>
 
           <motion.p
@@ -60,7 +60,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenAudit }) => {
             transition={{ duration: 0.8, delay: 0.35, ease: cubicEase }}
             className="text-base sm:text-xl text-[#F8FAF7]/85 leading-relaxed max-w-2xl text-balance"
           >
-            See where revenue is being delayed, denied, or left uncollected and discover opportunities to strengthen your revenue cycle.
+            Get a closer look at your revenue cycle, identify gaps in your billing process, and leave with clear RCM recommendations.
           </motion.p>
 
           <motion.div
@@ -74,7 +74,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenAudit }) => {
               onClick={onOpenAudit}
               className="px-8 py-4 rounded-full bg-[#F8FAF7] text-[#0E2925] text-sm font-semibold hover:bg-white transition-all shadow-md hover:shadow-lg active:scale-[0.98] inline-flex items-center gap-2 cursor-pointer"
             >
-              <span>Get a Free Billing Audit</span>
+              <span>Get Free Practice Audit</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 
@@ -83,14 +83,14 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenAudit }) => {
               className="px-6 py-4 rounded-full bg-white/10 hover:bg-white/20 text-[#F8FAF7] border border-white/20 text-sm font-medium transition-all backdrop-blur-sm inline-flex items-center gap-2 cursor-pointer"
             >
               <PhoneCall className="w-4 h-4 text-[#EAF7E6]" />
-              <span>Talk to Our Team</span>
+              <span>Talk to a Billing Specialist</span>
             </button>
           </motion.div>
 
           <div className="pt-4 flex flex-wrap items-center gap-6 text-xs text-[#F8FAF7]/60">
-            <span>· 48-Hour Report Turnaround</span>
-            <span>· 100% Confidential BAA Protected</span>
-            <span>· No Software Replacement Required</span>
+            <span>· 24-Hour Turnaround Time</span>
+            <span>· 100% Confidentiality</span>
+            <span>· No-Obligation Consultation</span>
           </div>
         </div>
       </motion.div>

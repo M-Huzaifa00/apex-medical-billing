@@ -24,7 +24,7 @@ export const EditorialIntro: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.15, ease: cubicEase }}
             className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#EAF7E6] uppercase"
           >
-            <span>The Billing Standard for Modern Healthcare</span>
+            <span>Billing Support Built Around Your Practice</span>
           </motion.div>
 
           <motion.h2
@@ -34,7 +34,7 @@ export const EditorialIntro: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.25, ease: cubicEase }}
             className="text-3xl sm:text-5xl lg:text-6xl font-editorial font-normal leading-[1.2] text-[#F8FAF7] text-balance"
           >
-            Medical billing shouldn&apos;t mean delayed payments, denied claims, and endless administrative work.
+            Medical billing that gives your revenue the attention your care deserves.
           </motion.h2>
 
           <motion.div
@@ -52,7 +52,7 @@ export const EditorialIntro: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5, ease: cubicEase }}
             className="text-lg sm:text-2xl font-editorial font-normal text-[#EAF7E6] leading-relaxed max-w-2xl mx-auto text-balance"
           >
-            We bring billing, claims, follow-up, and revenue management together so your practice can focus on care.
+            We stay on top of claim issues and unpaid balances so your team spends less time chasing payments.
           </motion.p>
         </div>
       </motion.div>

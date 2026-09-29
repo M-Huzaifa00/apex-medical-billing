@@ -7,17 +7,17 @@ export const Metrics: React.FC = () => {
     {
       value: '98%',
       label: 'Clean Claim Rate',
-      sublabel: 'First-pass payer submission acceptance',
+      sublabel: 'Claims accepted without initial corrections.',
     },
     {
       value: '25 Days',
       label: 'Average Days in A/R',
-      sublabel: 'Industry median exceeds 45–55 days',
+      sublabel: 'Payments spend less time outstanding.',
     },
     {
-      value: '15%',
-      label: 'Revenue Improvement',
-      sublabel: 'Average net collection increase in 90 days',
+      value: '25%',
+      label: 'Revenue Increase',
+      sublabel: 'Practices collect more of their earned revenue.',
     },
   ];
 
@@ -73,8 +73,8 @@ export const Metrics: React.FC = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="mt-6 text-center"
       >
-        <p className="text-[11px] text-[#747773] tracking-normal">
-          * Representative benchmark data across our active practice network. Individual practice metrics vary based on specialty and payer mix.
+        <p className="text-[11px] italic text-[#747773] tracking-normal">
+          Results vary by specialty, payer mix, billing history, and the services provided.
         </p>
       </motion.div>
     </section>

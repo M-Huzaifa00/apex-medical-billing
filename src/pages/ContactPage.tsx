@@ -8,13 +8,16 @@ import {
   ShieldCheck,
   CheckCircle2,
   ArrowRight,
-  FileSpreadsheet
+  FileSpreadsheet,
+  AlertCircle
 } from 'lucide-react';
 import { ApexLogo } from '../components/ApexLogo';
 import { cubicEase } from '../utils/animations';
+import { useFormSubmission } from '../hooks/useFormSubmission';
+import { isFilled, isValidEmail, isValidPhone } from '../utils/formValidation';
 
 export const ContactPage: React.FC = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const { submit, isSubmitting, isSuccess, errorMessage, reset, honeypotProps } = useFormSubmission();
   const [formData, setFormData] = useState({
     practiceName: '',
     specialty: 'Primary Care / Internal Medicine',
@@ -26,9 +29,30 @@ export const ContactPage: React.FC = () => {
     notes: '',
   });
 
+  const canSubmit =
+    isFilled(formData.practiceName) &&
+    isFilled(formData.providerName) &&
+    isValidPhone(formData.phone) &&
+    isValidEmail(formData.workEmail);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (!canSubmit) return;
+    submit({
+      subject: `New Practice Audit Request: ${formData.practiceName}`,
+      fromName: 'Apex Website – Contact Page',
+      replyTo: formData.workEmail,
+      fields: {
+        'Practice Name': formData.practiceName,
+        'Specialty': formData.specialty,
+        'Monthly Collections': formData.monthlyVolume,
+        'EHR / Billing Software': formData.ehrSystem,
+        'Name & Title': formData.providerName,
+        'Phone': formData.phone,
+        'Work Email': formData.workEmail,
+        'Operational Challenge': formData.notes || '—',
+      },
+    });
   };
 
   const offices = [
@@ -153,8 +177,9 @@ export const ContactPage: React.FC = () => {
         {/* Right Column: Interactive Practice Audit Form */}
         <div className="lg:col-span-7">
           <div className="rounded-[32px] sm:rounded-[40px] bg-white border border-[#E2E7DF] p-8 sm:p-12 shadow-sm">
-            {!submitted ? (
+            {!isSuccess ? (
               <form onSubmit={handleSubmit} className="space-y-5">
+                <input {...honeypotProps} />
                 <div className="space-y-2 pb-4 border-b border-[#E2E7DF]">
                   <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
                     Confidential Practice Evaluation
@@ -170,7 +195,7 @@ export const ContactPage: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-[#1E2423] mb-1.5">
-                      Practice or Group Name
+                      Practice or Group Name <span className="text-red-500" aria-hidden="true">*</span>
                     </label>
                     <input
                       type="text"
@@ -244,7 +269,7 @@ export const ContactPage: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-[#1E2423] mb-1.5">
-                      Your Name & Title
+                      Your Name & Title <span className="text-red-500" aria-hidden="true">*</span>
                     </label>
                     <input
                       type="text"
@@ -257,7 +282,7 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-[#1E2423] mb-1.5">
-                      Direct Phone
+                      Direct Phone <span className="text-red-500" aria-hidden="true">*</span>
                     </label>
                     <input
                       type="tel"
@@ -272,7 +297,7 @@ export const ContactPage: React.FC = () => {
 
                 <div>
                   <label className="block text-xs font-semibold text-[#1E2423] mb-1.5">
-                    Professional Work Email
+                    Professional Work Email <span className="text-red-500" aria-hidden="true">*</span>
                   </label>
                   <input
                     type="email"
@@ -304,13 +329,29 @@ export const ContactPage: React.FC = () => {
                   </span>
                 </div>
 
+                {errorMessage && (
+                  <div
+                    role="alert"
+                    className="p-3 bg-red-50 rounded-xl border border-red-200 flex items-start gap-2.5 text-xs text-red-700"
+                  >
+                    <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-full bg-[#57B836] text-white text-xs sm:text-sm font-semibold hover:bg-[#0E2925] transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                  disabled={isSubmitting || !canSubmit}
+                  className="w-full py-4 rounded-full bg-[#57B836] text-white text-xs sm:text-sm font-semibold hover:bg-[#0E2925] transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#57B836]"
                 >
-                  <span>Submit Practice Information for 48-Hour Audit</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>{isSubmitting ? 'Sending Your Practice Information...' : 'Submit Practice Information for 48-Hour Audit'}</span>
+                  {!isSubmitting && <ArrowRight className="w-4 h-4" />}
                 </button>
+                {!canSubmit && (
+                  <p className="text-center text-[11px] text-[#747773]">
+                    Fill in all fields marked * with a valid email and phone number to submit.
+                  </p>
+                )}
               </form>
             ) : (
               <div className="py-8 text-center space-y-4">
@@ -337,7 +378,7 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <button
-                  onClick={() => setSubmitted(false)}
+                  onClick={reset}
                   className="px-6 py-2.5 rounded-full bg-[#57B836] text-white text-xs font-semibold hover:bg-[#0E2925] transition-colors cursor-pointer"
                 >
                   Submit Another Inquiry

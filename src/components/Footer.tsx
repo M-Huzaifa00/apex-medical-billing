@@ -41,11 +41,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
             </Link>
 
             <h3 className="text-3xl sm:text-4xl font-editorial text-white font-normal leading-tight max-w-md">
-              A Better Revenue Cycle Starts Here.
+              Your Partner in Medical Billing.
             </h3>
 
             <p className="text-sm text-[#EAF7E6]/80 leading-relaxed max-w-sm">
-              We empower independent medical practices with transparent, compliant, and results-driven revenue cycle management.
+              We help your practice collect more of what it earns and spend less time on billing, so patient care gets your full attention.
             </p>
 
             <div className="pt-2">
@@ -53,7 +53,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
                 onClick={onOpenAudit}
                 className="px-6 py-3 rounded-full bg-[#F8FAF7] text-[#0E2925] text-xs font-semibold hover:bg-white transition-all shadow-sm inline-flex items-center gap-2 cursor-pointer"
               >
-                <span>Get a Free Billing Audit</span>
+                <span>Get Free Practice Audit</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
