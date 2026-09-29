@@ -139,7 +139,7 @@ export const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-[11px] uppercase tracking-wider text-white/60">HIPAA Compliance Verification</div>
-                  <div className="font-semibold text-white">100% BAA Covered Review</div>
+                  <div className="font-semibold text-white">100% HIPAA-Compliant</div>
                 </div>
               </div>
             </div>
