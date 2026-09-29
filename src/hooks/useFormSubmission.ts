@@ -13,7 +13,7 @@ const RATE_LIMIT: RateLimitConfig = {
 };
 
 const FALLBACK_ERROR =
-  "We couldn't send your request. Please try again, or email us directly at audit@apexmedicalbilling.com.";
+  "We couldn't send your request. Please try again, or email us directly at sales@apexmb.com.";
 
 const formatWait = (ms: number) => {
   const minutes = Math.ceil(ms / 60_000);

@@ -61,15 +61,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
             <div className="pt-4 space-y-2 text-xs text-white/60">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#EAF7E6]" />
-                <span>HIPAA-Compliant & SOC 2 Type II Certified Infrastructure</span>
+                <span>100% HIPAA-Compliant</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#EAF7E6]" />
-                <span>Provider Hotline: (800) 492-3810</span>
+                <span>Provider Hotline: 305-380-3263</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#EAF7E6]" />
-                <span>audit@apexmedicalbilling.com</span>
+                <span>sales@apexmb.com</span>
               </div>
             </div>
           </div>

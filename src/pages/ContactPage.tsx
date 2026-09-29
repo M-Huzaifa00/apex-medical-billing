@@ -119,7 +119,7 @@ export const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-[11px] uppercase tracking-wider text-white/60">Toll-Free Provider Hotline</div>
-                  <div className="font-semibold text-white text-base">(800) 492-3810</div>
+                  <div className="font-semibold text-white text-base">305-380-3263</div>
                 </div>
               </div>
 
@@ -129,7 +129,7 @@ export const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-[11px] uppercase tracking-wider text-white/60">Audit & Practice Inquiries</div>
-                  <div className="font-semibold text-white text-base">audit@apexmedicalbilling.com</div>
+                  <div className="font-semibold text-white text-base">sales@apexmb.com</div>
                 </div>
               </div>
 
