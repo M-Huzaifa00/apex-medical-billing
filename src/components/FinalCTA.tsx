@@ -23,10 +23,10 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenAudit }) => {
           <img
             src={ctaBg}
             alt="Physician director in contemporary healthcare practice"
-            className="w-full h-full object-cover object-center opacity-25 mix-blend-luminosity scale-105"
+            className="w-full h-full object-cover object-center scale-105"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0E2925] via-[#0E2925]/95 to-[#0E2925]/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E2925]/80 via-[#0E2925]/50 to-transparent" />
         </div>
 
         {/* Content */}
