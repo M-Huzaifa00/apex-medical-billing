@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, TrendingUp, CheckCircle, ShieldCheck } from 'lucide-react';
-import heroImg from '../assets/images/hero_billing_consultation_1790286581589.jpg';
+import heroImg from '../assets/images/hero_billing_consultation_1790286581589.png';
 import { cubicEase } from '../utils/animations';
 
 interface HeroProps {

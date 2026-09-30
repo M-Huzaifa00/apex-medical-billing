@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck, PhoneCall } from 'lucide-react';
-import ctaBg from '../assets/images/story_physician_financial_1790286614347.jpg';
+import ctaBg from '../assets/images/story_physician_financial_1790286614347.png';
 import { cubicEase, defaultViewport } from '../utils/animations';
 
 interface FinalCTAProps {
