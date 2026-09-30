@@ -42,29 +42,6 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
     },
   ];
 
-  const leadership = [
-    {
-      name: 'Sarah Montgomery, CPC, CPMA',
-      role: 'Chief Revenue Officer & Co-Founder',
-      bio: 'Former Director of Revenue Cycle for a 45-provider multi-specialty orthopedic network with 18+ years of clinical documentation, payer contract negotiation, and compliance audit experience.',
-    },
-    {
-      name: 'David Vance, MBA, CMPE',
-      role: 'Head of Practice Operations & Co-Founder',
-      bio: 'Healthcare practice administrator who has scaled medical billing operations across 120+ independent clinics, specializing in denial turnaround workflows and clearinghouse automation.',
-    },
-    {
-      name: 'Dr. Rebecca Chen, MD',
-      role: 'Clinical Advisory Chair',
-      bio: 'Practicing internist guiding Apex’s clinical documentation audits to ensure physician documentation workflows remain streamlined, compliant, and optimized for fee-for-service and value-based care.',
-    },
-    {
-      name: 'Marcus Thorne, CPC-I, CPCO',
-      role: 'Director of Coding Compliance',
-      bio: 'Certified Professional Coding Instructor with extensive experience in CMS regulatory audits, OIG compliance guidelines, and specialty coding precision.',
-    },
-  ];
-
   const complianceBadges = [
     { title: 'HIPAA Certified', desc: '100% BAA Covered', icon: Lock },
     { title: 'SOC 2 Type II', desc: 'Enterprise Security', icon: ShieldCheck },
@@ -186,40 +163,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
         </div>
       </section>
 
-      {/* 4. Leadership & Advisory */}
-      <section className="space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
-            Proven Healthcare Expertise
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925]">
-            Executive Leadership & Advisory Team
-          </h2>
-          <p className="text-sm text-[#747773]">
-            Decades of hands-on medical revenue cycle leadership guiding your practice’s financial health.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {leadership.map((leader, idx) => (
-            <div
-              key={idx}
-              className="rounded-[28px] bg-white border border-[#E2E7DF] p-7 space-y-3 flex flex-col justify-between shadow-2xs hover:shadow-sm transition-all"
-            >
-              <div>
-                <div className="w-10 h-10 rounded-full bg-[#57B836]/10 text-[#57B836] flex items-center justify-center mb-3 font-editorial font-bold text-base">
-                  {leader.name.charAt(0)}
-                </div>
-                <h3 className="text-base font-bold text-[#1E2423] leading-snug">{leader.name}</h3>
-                <div className="text-xs font-semibold text-[#57B836] mt-0.5">{leader.role}</div>
-                <p className="text-xs text-[#747773] leading-relaxed pt-3">{leader.bio}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 5. Compliance & Security Architecture */}
+      {/* 4. Compliance & Security Architecture */}
       <section className="rounded-[32px] sm:rounded-[40px] bg-white border border-[#E2E7DF] p-8 sm:p-12 shadow-sm">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-5 space-y-4">
@@ -254,7 +198,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
         </div>
       </section>
 
-      {/* 6. Measured Impact Banner */}
+      {/* 5. Measured Impact Banner */}
       <section className="rounded-[32px] sm:rounded-[40px] bg-[#0E2925] text-white p-8 sm:p-14 relative overflow-hidden">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
           <div>
