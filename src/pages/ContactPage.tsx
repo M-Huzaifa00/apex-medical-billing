@@ -57,25 +57,11 @@ export const ContactPage: React.FC = () => {
 
   const offices = [
     {
-      city: 'Denver, Colorado (HQ)',
-      address: '1801 California St, Suite 2400',
-      phone: '(303) 847-1920',
-      hours: 'Mon – Fri, 7:00 AM – 6:00 PM MT',
+      city: 'Miami Lakes, Florida',
+      address: '6625 Miami Lakes Dr, Suite 330\nMiami Lakes, Florida 33014, USA',
+      phone: '305-380-3263',
+      hours: 'Mon – Fri, 7:00 AM – 6:00 PM ET',
       type: 'Executive Headquarters & Coding Review',
-    },
-    {
-      city: 'Austin, Texas',
-      address: '100 Congress Ave, Suite 1200',
-      phone: '(512) 694-8100',
-      hours: 'Mon – Fri, 8:00 AM – 5:00 PM CT',
-      type: 'Surgical & Orthopedic Billing Hub',
-    },
-    {
-      city: 'Chicago, Illinois',
-      address: '300 S Riverside Plaza, Suite 1600',
-      phone: '(312) 584-3320',
-      hours: 'Mon – Fri, 8:00 AM – 5:00 PM CT',
-      type: 'Behavioral Health & Clearinghouse Support',
     },
   ];
 
@@ -145,10 +131,10 @@ export const ContactPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Regional Centers */}
+          {/* Office Location */}
           <div className="space-y-4">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
-              Regional Operations Centers
+              Office Location
             </h3>
             <div className="space-y-3">
               {offices.map((office, idx) => (
@@ -160,9 +146,9 @@ export const ContactPage: React.FC = () => {
                     <span className="font-semibold text-sm text-[#1E2423]">{office.city}</span>
                     <span className="text-[11px] font-semibold text-[#57B836]">{office.type}</span>
                   </div>
-                  <div className="text-xs text-[#747773] flex items-center gap-2">
-                    <MapPin className="w-3.5 h-3.5 text-[#57B836] shrink-0" />
-                    <span>{office.address}</span>
+                  <div className="text-xs text-[#747773] flex items-start gap-2">
+                    <MapPin className="w-3.5 h-3.5 text-[#57B836] shrink-0 mt-px" />
+                    <span className="whitespace-pre-line">{office.address}</span>
                   </div>
                   <div className="text-xs text-[#747773] flex items-center gap-2">
                     <Clock className="w-3.5 h-3.5 text-[#57B836] shrink-0" />
