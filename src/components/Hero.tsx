@@ -30,8 +30,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
             referrerPolicy="no-referrer"
           />
           {/* Multi-layered dark evergreen scrim inspired by ClinicHub */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0E2925]/95 via-[#0E2925]/85 to-[#0E2925]/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0E2925] via-transparent to-[#0E2925]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E2925]/75 via-[#0E2925]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0E2925]/60 via-transparent to-transparent" />
         </div>
 
         {/* Top Trust Indicator */}
