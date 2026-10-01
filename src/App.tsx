@@ -8,6 +8,7 @@ import { DevBanner } from './components/DevBanner';
 import { HomePage } from './pages/HomePage';
 import { AboutUsPage } from './pages/AboutUsPage';
 import { ServicesPage } from './pages/ServicesPage';
+import { SpecialtiesPage } from './pages/SpecialtiesPage';
 import { WhyChooseUsPage } from './pages/WhyChooseUsPage';
 import { ContactPage } from './pages/ContactPage';
 import { cubicEase } from './utils/animations';
@@ -51,6 +52,7 @@ export default function App() {
               <Route path="/" element={<HomePage onOpenAudit={handleOpenAudit} />} />
               <Route path="/about-us" element={<AboutUsPage onOpenAudit={handleOpenAudit} />} />
               <Route path="/services" element={<ServicesPage onOpenAudit={handleOpenAudit} />} />
+              <Route path="/specialties" element={<SpecialtiesPage onOpenAudit={handleOpenAudit} />} />
               <Route path="/why-choose-us" element={<WhyChooseUsPage onOpenAudit={handleOpenAudit} />} />
               <Route path="/contact-us" element={<ContactPage />} />
               <Route path="*" element={<Navigate to="/" replace />} />

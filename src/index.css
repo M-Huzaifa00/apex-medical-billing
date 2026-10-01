@@ -80,8 +80,25 @@
   to { transform: translateX(-50%); }
 }
 
+/* Specialties page: phone icon rings when a specialty chip is hovered */
+.specialty-chip:hover .specialty-chip-phone,
+.specialty-chip:focus-visible .specialty-chip-phone {
+  animation: phone-ring 0.9s ease-in-out infinite;
+}
+
+@keyframes phone-ring {
+  0%, 50%, 100% { transform: rotate(0); }
+  10%, 30% { transform: rotate(-14deg); }
+  20%, 40% { transform: rotate(14deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .dev-banner-sheen {
+    animation: none;
+  }
+
+  .specialty-chip:hover .specialty-chip-phone,
+  .specialty-chip:focus-visible .specialty-chip-phone {
     animation: none;
   }
 

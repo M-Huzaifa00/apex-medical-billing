@@ -11,6 +11,7 @@ const pageLinks = [
   { label: 'Homepage', to: '/' },
   { label: 'About Us', to: '/about-us' },
   { label: 'Services', to: '/services' },
+  { label: 'Specialties', to: '/specialties' },
   { label: 'Why Choose Us', to: '/why-choose-us' },
   { label: 'Contact Us', to: '/contact-us' },
 ];
