@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ShieldCheck } from 'lucide-react';
 import { cubicEase, defaultViewport } from '../utils/animations';
 
 export const EditorialIntro: React.FC = () => {
@@ -34,7 +35,7 @@ export const EditorialIntro: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.25, ease: cubicEase }}
             className="text-3xl sm:text-5xl lg:text-6xl font-editorial font-normal leading-[1.2] text-[#F8FAF7] text-balance"
           >
-            Medical billing that gives your revenue the attention your care deserves.
+            Medical Billing That Follows Through on the Care You’ve Already Delivered.
           </motion.h2>
 
           <motion.div
@@ -52,8 +53,19 @@ export const EditorialIntro: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5, ease: cubicEase }}
             className="text-lg sm:text-2xl font-editorial font-normal text-[#EAF7E6] leading-relaxed max-w-2xl mx-auto text-balance"
           >
-            We stay on top of claim issues and unpaid balances so your team spends less time chasing payments.
+            We stay on top of claim issues and unpaid balances so your team spends less time chasing payments and more time focused on patient care.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={defaultViewport}
+            transition={{ duration: 0.7, delay: 0.6, ease: cubicEase }}
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-sm border border-[#EAF7E6]/25 text-sm sm:text-base font-medium text-[#F8FAF7] text-balance"
+          >
+            <ShieldCheck className="w-5 h-5 shrink-0 text-[#EAF7E6]" />
+            <span>100% HIPAA-Compliant Medical Billing, With Patient Privacy at Every Step.</span>
+          </motion.div>
         </div>
       </motion.div>
     </section>

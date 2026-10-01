@@ -8,8 +8,10 @@ import {
   ArrowRight,
   CheckCircle2,
   Lock,
-  HeartHandshake,
-  FileCheck,
+  MessagesSquare,
+  ClipboardCheck,
+  UserCheck,
+  EyeOff,
 } from 'lucide-react';
 import leadershipImg from '../assets/images/practice_leadership_team_1790366106528.jpg';
 import { cubicEase, defaultViewport } from '../utils/animations';
@@ -21,32 +23,43 @@ interface AboutUsPageProps {
 export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
   const values = [
     {
-      title: '100% Onshore Certified Coders',
-      desc: 'We never outsource clinical claims or patient sensitive data overseas. Every billing specialist is US-based and credentialed by AAPC or AHIMA.',
+      title: 'Certified Billing Professionals',
+      desc: 'Our certified billing team brings trained expertise to revenue cycle tasks, with careful attention to accuracy, documentation, and proper claim handling.',
+      tagline: 'Qualified Expertise Behind Every Claim',
       icon: Award,
     },
     {
-      title: 'Radical Financial Transparency',
-      desc: 'No black-box monthly summary sheets. You retain direct access to your clearinghouse, bank remittance receipts, and line-item claim tracking 24/7.',
+      title: 'Clear Communication',
+      desc: 'We keep communication straightforward and responsive, so your team knows what needs attention without unnecessary back-and-forth or unclear updates.',
+      tagline: 'Clear Answers. Fewer Questions.',
+      icon: MessagesSquare,
+    },
+    {
+      title: 'Consistent Follow-Through',
+      desc: 'Billing issues rarely resolve themselves. We stay focused on assigned tasks, maintain proper documentation, and follow each item through to the appropriate next step.',
+      tagline: 'Nothing Left Without a Next Step',
+      icon: ClipboardCheck,
+    },
+    {
+      title: 'Continuous Improvement',
+      desc: 'Payer requirements and billing processes continue to evolve. We refine our workflows to maintain accuracy, efficiency, and reliable support as those requirements change.',
+      tagline: 'Better Processes, Better Support',
       icon: TrendingUp,
-    },
-    {
-      title: 'Relentless Denial Advocacy',
-      desc: 'We never write off difficult claims or let timely filing limits expire. Our certified denial specialists investigate every CARC code and appeal within 48 hours.',
-      icon: ShieldCheck,
-    },
-    {
-      title: 'True Clinical Extension',
-      desc: 'We operate as an integrated department inside your existing EHR. Your physicians and front desk receive direct, responsive pod communication daily.',
-      icon: HeartHandshake,
     },
   ];
 
   const complianceBadges = [
-    { title: 'HIPAA Certified', desc: '100% BAA Covered', icon: Lock },
-    { title: 'SOC 2 Type II', desc: 'Enterprise Security', icon: ShieldCheck },
-    { title: 'AAPC Affiliated', desc: 'Certified Coders', icon: Award },
-    { title: 'AHIMA Standard', desc: 'Clinical Documentation', icon: FileCheck },
+    { title: 'Privacy-Focused Billing', desc: 'HIPAA-Compliant Processes', icon: ShieldCheck },
+    { title: 'Authorized Personnel', desc: 'Access Limited to Approved Team Members', icon: UserCheck },
+    { title: 'Secure Data Handling', desc: 'Sensitive Information Managed Responsibly', icon: Lock },
+    { title: 'Confidentiality Standards', desc: 'Privacy Maintained Throughout the Process', icon: EyeOff },
+  ];
+
+  const glanceStats = [
+    { value: '98%', label: 'Clean Claim Rate' },
+    { value: '24 Hours', label: 'Claim Submission' },
+    { value: '25%', label: 'Revenue Increase' },
+    { value: '18+', label: 'Specialties & Care Settings' },
   ];
 
   return (
@@ -62,10 +75,10 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
           About Apex Medical Billing
         </span>
         <h1 className="text-4xl sm:text-6xl font-editorial font-normal text-[#0E2925] leading-[1.15]">
-          Protecting the Financial Independence of Healthcare Practices.
+          Every Healthcare Practice Deserves a Dependable Billing Partner.
         </h1>
         <p className="mt-4 text-lg text-[#747773] leading-relaxed max-w-2xl mx-auto">
-          We founded Apex Medical Billing with a singular mission: to eliminate the friction, opacity, and revenue loss that plague medical practices, giving providers the financial clarity they deserve.
+          We support healthcare practices across all 50 U.S. states with medical billing and revenue cycle services that help manage collections, reduce administrative work, and keep claims and payments easier to track.
         </p>
       </motion.section>
 
@@ -86,13 +99,13 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0E2925]/90 via-[#0E2925]/30 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8 text-white">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#EAF7E6]">
-              Executive Commitment
+              A Message From Our CEO
             </span>
             <p className="text-lg font-editorial mt-1 text-white">
-              “Every independent practice deserves the same high-caliber billing expertise that hospital conglomerates employ.”
+              “Practice owners should have a clear view of their revenue and confidence in the team managing it.”
             </p>
             <p className="text-xs text-[#EAF7E6]/70 mt-2 font-medium">
-              — Sarah Montgomery, CPC, CPMA, Chief Revenue Officer
+              Muhammad Asad Khan, CEO
             </p>
           </div>
         </div>
@@ -100,26 +113,26 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
         <div className="lg:col-span-6 space-y-6">
           <div className="space-y-3">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
-              Our Founding Story
+              Who We Are
             </span>
             <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925] leading-snug">
-              Built by Practice Administrators Who Refused the Status Quo.
+              From Claims to Collections, We Help Keep Revenue Moving.
             </h2>
           </div>
           <p className="text-sm text-[#747773] leading-relaxed">
-            For years, independent medical practices were forced to choose between two flawed alternatives: overburdened in-house staff struggling to keep pace with complex payer rules, or massive outsourced clearinghouses that dumped claims into offshore call centers where denials were silently written off.
+            Managing the revenue cycle takes more than submitting claims. Billing, A/R follow-up, account reconciliation, quality assurance, and customer support all play a part in getting claims resolved, payments recorded, and outstanding accounts properly followed up.
           </p>
           <p className="text-sm text-[#747773] leading-relaxed">
-            Apex Medical Billing was created to provide a third, superior path. We assembled a dedicated team of onshore, specialty-certified coders, clinical documentation auditors, and experienced practice managers. We built rigorous electronic claim scrubbing protocols that catch errors before submission, driving our client average to a 98.2% first-pass clean claim rate.
+            Our team supports providers across 18+ specialties and care settings, adapting workflows to each practice’s billing needs. The goal is to reduce the administrative load on your staff while making claims, payments, and outstanding accounts easier to track and manage.
           </p>
           <div className="pt-2 grid grid-cols-2 gap-4">
             <div className="p-4 rounded-2xl bg-[#EAF7E6]/60 border border-[#57B836]/20">
               <div className="text-2xl font-editorial text-[#0E2925]">100%</div>
-              <div className="text-xs text-[#747773] font-medium mt-0.5">US-Based Certified Staff</div>
+              <div className="text-xs text-[#747773] font-medium mt-0.5">HIPAA-Compliant Processes</div>
             </div>
             <div className="p-4 rounded-2xl bg-[#E6F7FA]/60 border border-[#00A7C7]/20">
-              <div className="text-2xl font-editorial text-[#0E2925]">&lt; 48 Hrs</div>
-              <div className="text-xs text-[#747773] font-medium mt-0.5">Denial Appeal Turnaround</div>
+              <div className="text-2xl font-editorial text-[#0E2925]">50 States</div>
+              <div className="text-xs text-[#747773] font-medium mt-0.5">Nationwide Billing Support</div>
             </div>
           </div>
         </div>
@@ -132,7 +145,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
             Our Operating Principles
           </span>
           <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925]">
-            The Standards We Stand By Every Day
+            The Standards Behind How We Work
           </h2>
         </div>
 
@@ -155,7 +168,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
                 <p className="text-sm text-[#747773] leading-relaxed">{val.desc}</p>
                 <div className="pt-4 mt-4 border-t border-[#E2E7DF] flex items-center gap-2 text-xs font-semibold text-[#57B836]">
                   <CheckCircle2 className="w-4 h-4 shrink-0" />
-                  <span>Standard Service Level Commitment</span>
+                  <span>{val.tagline}</span>
                 </div>
               </motion.div>
             );
@@ -168,13 +181,13 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-5 space-y-4">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
-              Security & Regulatory Rigor
+              Security & Compliance
             </span>
             <h2 className="text-3xl font-editorial text-[#0E2925]">
-              Uncompromising HIPAA & SOC 2 Safeguards
+              Patient Data Handled With Care
             </h2>
             <p className="text-sm text-[#747773] leading-relaxed">
-              Medical billing involves the most sensitive patient health information. Apex adheres to stringent physical, technical, and administrative controls to protect your clinic against compliance vulnerability.
+              Medical billing involves sensitive patient and financial information. Our HIPAA-compliant approach helps protect privacy, limit access, and support responsible handling of information throughout the billing process.
             </p>
           </div>
 
@@ -200,39 +213,33 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
 
       {/* 5. Measured Impact Banner */}
       <section className="rounded-[32px] sm:rounded-[40px] bg-[#0E2925] text-white p-8 sm:p-14 relative overflow-hidden">
+        <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836] block text-center mb-8 relative z-10">
+          Apex at a Glance
+        </span>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
-          <div>
-            <div className="text-4xl sm:text-5xl font-editorial text-[#EAF7E6]">98.2%</div>
-            <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Clean Claim Rate</div>
-          </div>
-          <div>
-            <div className="text-4xl sm:text-5xl font-editorial text-[#EAF7E6]">$14.8M+</div>
-            <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Denied Claims Recovered</div>
-          </div>
-          <div>
-            <div className="text-4xl sm:text-5xl font-editorial text-[#EAF7E6]">24.6 Days</div>
-            <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Average Days in A/R</div>
-          </div>
-          <div>
-            <div className="text-4xl sm:text-5xl font-editorial text-[#EAF7E6]">99.4%</div>
-            <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Annual Client Retention</div>
-          </div>
+          {glanceStats.map((stat) => (
+            <div key={stat.label}>
+              <div className="text-4xl sm:text-5xl font-editorial text-[#EAF7E6]">{stat.value}</div>
+              <div className="text-xs text-white/70 uppercase tracking-wider mt-1">{stat.label}</div>
+            </div>
+          ))}
         </div>
 
         <div className="mt-10 pt-8 border-t border-white/10 text-center relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={onOpenAudit}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#57B836] text-white text-xs font-semibold hover:bg-white hover:text-[#0E2925] transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <span>Request a Free Practice Audit</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
           <Link
             to="/contact-us"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#57B836] text-white text-xs font-semibold hover:bg-white hover:text-[#0E2925] transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>Schedule a 1:1 Meeting</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <button
+            onClick={onOpenAudit}
             className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/10 text-white text-xs font-semibold hover:bg-white/20 transition-all border border-white/20 inline-flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Contact Practice Leadership</span>
-          </Link>
+            <span>Get a Free Practice Audit</span>
+          </button>
         </div>
       </section>
     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { motion } from 'framer-motion';
-import { ArrowRight, ShieldCheck, PhoneCall } from 'lucide-react';
+import { ArrowRight, ShieldCheck } from 'lucide-react';
 import ctaBg from '../assets/images/story_physician_financial_1790286614347.png';
 import { cubicEase, defaultViewport } from '../utils/animations';
 
@@ -39,7 +40,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenAudit }) => {
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#EAF7E6]"
           >
             <ShieldCheck className="w-4 h-4 text-[#EAF7E6]" />
-            <span>Risk-Free Revenue Assessment</span>
+            <span>Free Practice Audit</span>
           </motion.div>
 
           <motion.h2
@@ -60,7 +61,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenAudit }) => {
             transition={{ duration: 0.8, delay: 0.35, ease: cubicEase }}
             className="text-base sm:text-xl text-[#F8FAF7]/85 leading-relaxed max-w-2xl text-balance"
           >
-            Get a closer look at your revenue cycle, identify gaps in your billing process, and leave with clear RCM recommendations.
+            Get a closer look at your revenue cycle, identify gaps in your billing process, and leave with clear recommendations for strengthening your RCM.
           </motion.p>
 
           <motion.div
@@ -74,23 +75,24 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenAudit }) => {
               onClick={onOpenAudit}
               className="px-8 py-4 rounded-full bg-[#F8FAF7] text-[#0E2925] text-sm font-semibold hover:bg-white transition-all shadow-md hover:shadow-lg active:scale-[0.98] inline-flex items-center gap-2 cursor-pointer"
             >
-              <span>Get Free Practice Audit</span>
+              <span>Get a Free Practice Audit</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 
-            <button
-              onClick={onOpenAudit}
+            <Link
+              to="/services"
               className="px-6 py-4 rounded-full bg-white/10 hover:bg-white/20 text-[#F8FAF7] border border-white/20 text-sm font-medium transition-all backdrop-blur-sm inline-flex items-center gap-2 cursor-pointer"
             >
-              <PhoneCall className="w-4 h-4 text-[#EAF7E6]" />
-              <span>Talk to a Billing Specialist</span>
-            </button>
+              Explore Our Services
+            </Link>
           </motion.div>
 
-          <div className="pt-4 flex flex-wrap items-center gap-6 text-xs text-[#F8FAF7]/60">
-            <span>· 24-Hour Turnaround Time</span>
-            <span>· 100% Confidentiality</span>
-            <span>· No-Obligation Consultation</span>
+          <div className="pt-4 flex flex-wrap items-center gap-3 text-xs text-[#F8FAF7]/60">
+            <span>24-Hour Claim Submission</span>
+            <span className="text-white/40">·</span>
+            <span>Confidential Handling</span>
+            <span className="text-white/40">·</span>
+            <span>No Obligation</span>
           </div>
         </div>
       </motion.div>

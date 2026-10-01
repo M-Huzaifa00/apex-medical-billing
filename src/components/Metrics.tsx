@@ -7,17 +7,17 @@ export const Metrics: React.FC = () => {
     {
       value: '98%',
       label: 'Clean Claim Rate',
-      sublabel: 'Claims accepted without initial corrections.',
+      sublabel: 'Claims submitted cleanly the first time.',
     },
     {
       value: '25 Days',
       label: 'Average Days in A/R',
-      sublabel: 'Payments spend less time outstanding.',
+      sublabel: 'Helping keep outstanding payments moving.',
     },
     {
       value: '25%',
       label: 'Revenue Increase',
-      sublabel: 'Practices collect more of their earned revenue.',
+      sublabel: 'Helping practices capture more of the revenue they earn.',
     },
   ];
 
@@ -74,7 +74,7 @@ export const Metrics: React.FC = () => {
         className="mt-6 text-center"
       >
         <p className="text-[11px] italic text-[#747773] tracking-normal">
-          Results vary by specialty, payer mix, billing history, and the services provided.
+          Results vary by specialty, payer mix, billing history, and services provided.
         </p>
       </motion.div>
     </section>

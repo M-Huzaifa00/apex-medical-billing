@@ -20,27 +20,27 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
       subtitle: 'The People Behind Apex',
       to: '/about-us',
       description:
-        'Apex Medical Billing helps healthcare practices manage the work behind getting paid, with a focus on accurate billing, consistent follow-up, and careful payment reconciliation.',
-      cta: 'Meet Our Team',
+        'Get to know the team and approach behind Apex, from accurate billing and clear communication to consistent attention to your revenue cycle.',
+      cta: 'Get to Know Apex',
       icon: Users,
-      badge: '100% HIPAA-Compliant',
+      badge: '18+ Specialties',
     },
     {
       title: 'Our Services',
       subtitle: 'Support at Every Step',
       to: '/services',
       description:
-        'Get help with medical billing, accounts receivable follow-up, account reconciliation, quality assurance, and customer support. Five connected services to keep your billing process on track.',
+        'Medical billing, A/R follow-up, account reconciliation, quality assurance, and customer support work together to help manage outstanding payments and reduce your team’s billing workload.',
       cta: 'Explore Our Services',
       icon: Sparkles,
-      badge: '98% Clean Claims',
+      badge: 'End-to-End Support',
     },
     {
       title: 'Why Choose Us',
       subtitle: 'The Apex Approach',
       to: '/why-choose-us',
       description:
-        'Small billing errors can become costly delays. We check the details, follow up on unresolved claims, and reconcile payments to help protect your practice’s revenue.',
+        'Stay informed about where claims stand, what needs attention, and what comes next through dedicated billing support and consistent communication.',
       cta: 'See How We Work',
       icon: ShieldCheck,
       badge: '24-Hour Claim Submission',
@@ -50,10 +50,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
       subtitle: 'Let’s Talk About Your Practice',
       to: '/contact-us',
       description:
-        'Dealing with unpaid claims or a growing billing backlog? Tell us what’s getting in the way, and we’ll talk through how Apex can help.',
-      cta: 'Get Free Practice Audit',
+        'Tell us about your specialty, current billing process, and the issues taking up your team’s time. We’ll help identify where additional billing support could make a difference.',
+      cta: 'Schedule a 1:1 Meeting',
       icon: PhoneCall,
-      badge: 'Free Consultation',
+      badge: '1:1 Billing Consultation',
     },
   ];
 
@@ -78,10 +78,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
             Get to Know Apex
           </span>
           <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925]">
-            Complete Billing Support for a Thriving Practice
+            The Billing Support Your Practice Needs
           </h2>
           <p className="text-sm text-[#747773]">
-            Meet our team, explore our services, and find the support your practice needs.
+            Meet our team, explore our services, and see how we support healthcare providers nationwide.
           </p>
         </div>
 

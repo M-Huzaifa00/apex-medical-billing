@@ -46,7 +46,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
             </h3>
 
             <p className="text-sm text-[#EAF7E6]/80 leading-relaxed max-w-sm">
-              We help your practice collect more of what it earns and spend less time on billing, so patient care gets your full attention.
+              We help healthcare practices manage billing, follow up on outstanding accounts, and spend less time on administrative work so patient care gets more of their attention.
             </p>
 
             <div className="pt-2">
@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
                 onClick={onOpenAudit}
                 className="px-6 py-3 rounded-full bg-[#F8FAF7] text-[#0E2925] text-xs font-semibold hover:bg-white transition-all shadow-sm inline-flex items-center gap-2 cursor-pointer"
               >
-                <span>Get Free Practice Audit</span>
+                <span>Get a Free Practice Audit</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

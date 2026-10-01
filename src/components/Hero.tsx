@@ -48,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
               ))}
             </div>
             <span className="text-white/80">·</span>
-            <span className="tracking-wide">Serving Healthcare Practices Across 15+ U.S. States</span>
+            <span className="tracking-wide">Serving Healthcare Practices Across All 50 U.S. States</span>
           </div>
         </motion.div>
 
@@ -72,7 +72,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
               transition={{ duration: 0.8, delay: 0.45, ease: cubicEase }}
               className="mt-5 sm:mt-6 text-base sm:text-lg text-[#F8FAF7]/85 font-normal leading-relaxed max-w-xl"
             >
-              Billing backlogs take time your team needs elsewhere. Apex Medical Billing manages billing, follows up on outstanding claims, and reconciles payments to help your practice improve its collections.
+              Billing backlogs take time your team needs elsewhere. Apex Medical Billing manages billing, follows up on outstanding claims, and reconciles payments to help your practice improve collections and keep revenue moving.
             </motion.p>
 
             <motion.div
@@ -81,20 +81,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
               transition={{ duration: 0.7, delay: 0.6, ease: cubicEase }}
               className="mt-8 sm:mt-10 flex flex-wrap items-center gap-4"
             >
-              <button
-                onClick={onOpenAudit}
+              <Link
+                to="/contact-us"
                 className="px-7 py-3.5 rounded-full bg-[#F8FAF7] text-[#0E2925] text-sm font-semibold hover:bg-white transition-all shadow-md hover:shadow-lg active:scale-[0.98] inline-flex items-center gap-2 group cursor-pointer"
               >
-                <span>Get Free Practice Audit</span>
+                <span>Schedule a 1:1 Meeting</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
+              </Link>
 
-              <Link
-                to="/services"
+              <button
+                onClick={onOpenAudit}
                 className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-[#F8FAF7] border border-white/20 text-sm font-medium transition-all backdrop-blur-sm cursor-pointer"
               >
-                Explore Our Services
-              </Link>
+                Get a Free Practice Audit
+              </button>
             </motion.div>
 
             <motion.div
