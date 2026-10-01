@@ -66,8 +66,30 @@
   to { background-position: -150% 0; }
 }
 
+/* Home page logo slider */
+.logo-marquee-track {
+  animation: logo-marquee 50s linear infinite;
+}
+
+.logo-marquee:hover .logo-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes logo-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .dev-banner-sheen {
+    animation: none;
+  }
+
+  .logo-marquee {
+    overflow-x: auto;
+  }
+
+  .logo-marquee-track {
     animation: none;
   }
 }

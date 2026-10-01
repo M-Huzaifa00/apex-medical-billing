@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { motion } from 'framer-motion';
 import { ArrowRight, Users, Sparkles, ShieldCheck, PhoneCall } from 'lucide-react';
 import { Hero } from '../components/Hero';
+import { LogoSlider } from '../components/LogoSlider';
 import { Metrics } from '../components/Metrics';
 import { EditorialIntro } from '../components/EditorialIntro';
 import { FinalCTA } from '../components/FinalCTA';
@@ -61,13 +62,16 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
       {/* 1. Hero Section */}
       <Hero onOpenAudit={onOpenAudit} />
 
-      {/* 2. 3-Stat Metric Section */}
+      {/* 2. Platform Logo Slider */}
+      <LogoSlider />
+
+      {/* 3. 3-Stat Metric Section */}
       <Metrics />
 
-      {/* 3. Dark Evergreen Editorial Intro Statement */}
+      {/* 4. Dark Evergreen Editorial Intro Statement */}
       <EditorialIntro />
 
-      {/* 4. Streamlined 4-Page Gateway (Clean portal into the 4 core pages) */}
+      {/* 5. Streamlined 4-Page Gateway (Clean portal into the 4 core pages) */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
           <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
@@ -132,7 +136,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
         </div>
       </section>
 
-      {/* 5. Final Dark Evergreen CTA */}
+      {/* 6. Final Dark Evergreen CTA */}
       <FinalCTA onOpenAudit={onOpenAudit} />
     </div>
   );
