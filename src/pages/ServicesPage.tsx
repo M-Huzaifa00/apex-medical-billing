@@ -12,7 +12,7 @@ import {
   CheckCircle2,
   ShieldCheck
 } from 'lucide-react';
-import techImg from '../assets/images/medical_technology_analytics_1790366089350.jpg';
+import techImg from '../assets/images/medical_technology_analytics_1790366089350.png';
 import { cubicEase, defaultViewport } from '../utils/animations';
 
 interface ServicesPageProps {

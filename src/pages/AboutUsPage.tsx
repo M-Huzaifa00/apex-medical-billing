@@ -13,7 +13,7 @@ import {
   UserCheck,
   EyeOff,
 } from 'lucide-react';
-import leadershipImg from '../assets/images/practice_leadership_team_1790366106528.jpg';
+import leadershipImg from '../assets/images/practice_leadership_team_1790366106528.png';
 import { cubicEase, defaultViewport } from '../utils/animations';
 
 interface AboutUsPageProps {
