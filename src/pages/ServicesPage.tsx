@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   FileText,
@@ -10,7 +10,9 @@ import {
   BarChart3,
   ArrowRight,
   CheckCircle2,
-  ShieldCheck
+  ShieldCheck,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import techImg from '../assets/images/medical_technology_analytics_1790366089350.png';
 import { cubicEase, defaultViewport } from '../utils/animations';
@@ -21,6 +23,66 @@ interface ServicesPageProps {
 
 export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
   const [selectedService, setSelectedService] = useState<number>(0);
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const updateScrollState = useCallback(() => {
+    const el = tabsRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 1);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  }, []);
+
+  // Track overflow and map vertical mouse-wheel input to horizontal tab scrolling
+  useEffect(() => {
+    const el = tabsRef.current;
+    if (!el) return;
+
+    const onWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      if (maxScroll <= 0) return;
+      // Hand the wheel back to the page once the tabs hit either end
+      if ((e.deltaY < 0 && el.scrollLeft <= 0) || (e.deltaY > 0 && el.scrollLeft >= maxScroll - 1)) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
+    };
+
+    updateScrollState();
+    el.addEventListener('wheel', onWheel, { passive: false });
+    el.addEventListener('scroll', updateScrollState, { passive: true });
+    const resizeObserver = new ResizeObserver(updateScrollState);
+    resizeObserver.observe(el);
+
+    return () => {
+      el.removeEventListener('wheel', onWheel);
+      el.removeEventListener('scroll', updateScrollState);
+      resizeObserver.disconnect();
+    };
+  }, [updateScrollState]);
+
+  // Keep the selected tab fully visible inside the scroller
+  useEffect(() => {
+    const el = tabsRef.current;
+    const tab = tabRefs.current[selectedService];
+    if (!el || !tab) return;
+    const containerRect = el.getBoundingClientRect();
+    const tabRect = tab.getBoundingClientRect();
+    const edgeOffset = 48;
+    if (tabRect.left < containerRect.left + edgeOffset) {
+      el.scrollBy({ left: tabRect.left - containerRect.left - edgeOffset, behavior: 'smooth' });
+    } else if (tabRect.right > containerRect.right - edgeOffset) {
+      el.scrollBy({ left: tabRect.right - containerRect.right + edgeOffset, behavior: 'smooth' });
+    }
+  }, [selectedService]);
+
+  const scrollTabs = (direction: -1 | 1) => {
+    const el = tabsRef.current;
+    if (!el) return;
+    el.scrollBy({ left: direction * el.clientWidth * 0.6, behavior: 'smooth' });
+  };
 
   const services = [
     {
@@ -60,22 +122,22 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
       highlight: 'Unlocks unbilled services while keeping audits airtight',
     },
     {
-      id: 'denials',
+      id: 'credentialing',
       number: '03',
-      title: 'Denial Management & Root-Cause Appeals',
-      tagline: '82% First-Appeal Reversal Rate',
-      icon: AlertTriangle,
+      title: 'Provider Credentialing & Payer Enrollment',
+      tagline: 'Prevent Reimbursement Freezes',
+      icon: UserCheck,
       description:
-        'Denials are categorized by CARC and RARC remittance codes immediately upon receipt. Our clinical appeals team crafts customized, evidence-based dispute letters to reverse non-payments.',
+        'Complete management of CAQH profiles, hospital privileges, commercial insurance payer panel enrollment, Medicare PECOS revalidations, and Medicaid state enrollments.',
       workflow: [
-        'Automated clearinghouse denial capture on day zero',
-        'Root-cause categorization: medical necessity, pre-auth, or coding discrepancy',
-        'Clinical appeal letter preparation with supporting medical records',
-        'Active payer escalations and timely claim resubmissions',
+        'CAQH ProView initial setup, attestation, and quarterly maintenance',
+        'Payer contract application tracking and direct representative follow-up',
+        'NPI Registry updates and facility credentialing coordination',
+        'Proactive 90-day recredentialing warnings to avoid contract lapses',
       ],
-      kpi: '82% Denied Claim Recovery',
-      turnaround: '48-hour denial triage protocol',
-      highlight: 'Transforms lost revenue into collected practice cash',
+      kpi: '120+ Payer Networks Enrolled',
+      turnaround: 'Expedited processing workflows',
+      highlight: 'Eliminates out-of-network payment denials for new providers',
     },
     {
       id: 'ar',
@@ -114,22 +176,22 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
       highlight: 'Zero unallocated cash or ledger discrepancies',
     },
     {
-      id: 'credentialing',
+      id: 'denials',
       number: '06',
-      title: 'Provider Credentialing & Payer Enrollment',
-      tagline: 'Prevent Reimbursement Freezes',
-      icon: UserCheck,
+      title: 'Denial Management & Root-Cause Appeals',
+      tagline: '82% First-Appeal Reversal Rate',
+      icon: AlertTriangle,
       description:
-        'Complete management of CAQH profiles, hospital privileges, commercial insurance payer panel enrollment, Medicare PECOS revalidations, and Medicaid state enrollments.',
+        'Denials are categorized by CARC and RARC remittance codes immediately upon receipt. Our clinical appeals team crafts customized, evidence-based dispute letters to reverse non-payments.',
       workflow: [
-        'CAQH ProView initial setup, attestation, and quarterly maintenance',
-        'Payer contract application tracking and direct representative follow-up',
-        'NPI Registry updates and facility credentialing coordination',
-        'Proactive 90-day recredentialing warnings to avoid contract lapses',
+        'Automated clearinghouse denial capture on day zero',
+        'Root-cause categorization: medical necessity, pre-auth, or coding discrepancy',
+        'Clinical appeal letter preparation with supporting medical records',
+        'Active payer escalations and timely claim resubmissions',
       ],
-      kpi: '120+ Payer Networks Enrolled',
-      turnaround: 'Expedited processing workflows',
-      highlight: 'Eliminates out-of-network payment denials for new providers',
+      kpi: '82% Denied Claim Recovery',
+      turnaround: '48-hour denial triage protocol',
+      highlight: 'Transforms lost revenue into collected practice cash',
     },
     {
       id: 'analytics',
@@ -202,25 +264,69 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
 
       {/* 2. Interactive Service Explorer (Tabs + Deep Feature Card) */}
       <section className="space-y-8">
-        <div className="flex items-center justify-between border-b border-[#E2E7DF] pb-4 overflow-x-auto scrollbar-none gap-2">
-          {services.map((item, idx) => {
-            const Icon = item.icon;
-            const isSelected = selectedService === idx;
-            return (
-              <button
-                key={item.id}
-                onClick={() => setSelectedService(idx)}
-                className={`flex items-center gap-2.5 px-4 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
-                  isSelected
-                    ? 'bg-[#57B836] text-white shadow-sm'
-                    : 'bg-white text-[#747773] hover:text-[#1E2423] border border-[#E2E7DF]'
-                }`}
-              >
-                <Icon className="w-3.5 h-3.5" />
-                <span>{item.number}. {item.title.split('&')[0]}</span>
-              </button>
-            );
-          })}
+        <div className="relative border-b border-[#E2E7DF]">
+          <div
+            ref={tabsRef}
+            className="flex items-center justify-between pb-4 overflow-x-auto scrollbar-none gap-2"
+          >
+            {services.map((item, idx) => {
+              const Icon = item.icon;
+              const isSelected = selectedService === idx;
+              return (
+                <button
+                  key={item.id}
+                  ref={(node) => {
+                    tabRefs.current[idx] = node;
+                  }}
+                  onClick={() => setSelectedService(idx)}
+                  className={`shrink-0 flex items-center gap-2.5 px-4 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+                    isSelected
+                      ? 'bg-[#57B836] text-white shadow-sm'
+                      : 'bg-white text-[#747773] hover:text-[#1E2423] border border-[#E2E7DF]'
+                  }`}
+                >
+                  <Icon className="w-3.5 h-3.5" />
+                  <span>{item.number}. {item.title.split('&')[0]}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Edge fades + scroll arrows (only shown when tabs overflow in that direction) */}
+          <div
+            className={`absolute left-0 top-0 bottom-4 flex items-center pr-12 bg-gradient-to-r from-[#F8FAF7] via-[#F8FAF7]/90 to-transparent pointer-events-none transition-opacity duration-200 ${
+              canScrollLeft ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <button
+              type="button"
+              aria-label="Scroll services left"
+              tabIndex={canScrollLeft ? 0 : -1}
+              onClick={() => scrollTabs(-1)}
+              className={`w-9 h-9 rounded-full bg-white border border-[#E2E7DF] text-[#1E2423] shadow-sm flex items-center justify-center hover:border-[#57B836] hover:text-[#57B836] transition-colors cursor-pointer ${
+                canScrollLeft ? 'pointer-events-auto' : 'pointer-events-none'
+              }`}
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+          </div>
+          <div
+            className={`absolute right-0 top-0 bottom-4 flex items-center pl-12 bg-gradient-to-l from-[#F8FAF7] via-[#F8FAF7]/90 to-transparent pointer-events-none transition-opacity duration-200 ${
+              canScrollRight ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <button
+              type="button"
+              aria-label="Scroll services right"
+              tabIndex={canScrollRight ? 0 : -1}
+              onClick={() => scrollTabs(1)}
+              className={`w-9 h-9 rounded-full bg-white border border-[#E2E7DF] text-[#1E2423] shadow-sm flex items-center justify-center hover:border-[#57B836] hover:text-[#57B836] transition-colors cursor-pointer ${
+                canScrollRight ? 'pointer-events-auto' : 'pointer-events-none'
+              }`}
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
         {/* Selected Service Detailed View */}
