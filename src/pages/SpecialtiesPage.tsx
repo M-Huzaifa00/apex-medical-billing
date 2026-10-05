@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -42,7 +43,7 @@ const specialties = [
   { name: 'Cardiology', icon: HeartPulse },
   { name: 'Acupuncture', icon: Leaf },
   { name: 'Ophthalmology', icon: Eye },
-  { name: 'Pediatric', icon: Baby },
+  { name: 'Pediatrics', icon: Baby },
   { name: 'Orthopedics', icon: Bone },
   { name: 'Physical Therapy', icon: Dumbbell },
   { name: 'Primary Care', icon: Stethoscope },
@@ -64,34 +65,30 @@ export const SpecialtiesPage: React.FC<SpecialtiesPageProps> = ({ onOpenAudit })
         className="text-center max-w-3xl mx-auto pt-6"
       >
         <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836] block mb-3">
-          Specialties We Serve
+          Specialty-Focused Billing Support
         </span>
         <h1 className="text-4xl sm:text-6xl font-editorial font-normal text-[#0E2925] leading-[1.15] text-balance">
-          Billing That Speaks Your Specialty.
+          Billing Expertise Across 18+ Healthcare Specialties.
         </h1>
         <p className="mt-4 text-lg text-[#747773] leading-relaxed max-w-2xl mx-auto">
-          Every specialty has its own codes, modifiers, and payer rules. Tap yours below to talk with a billing specialist who already knows them.
+          Every specialty comes with different requirements. Our billing support adapts to those differences to help keep claims accurate, follow-up consistent, and revenue moving.
         </p>
 
-        <a
-          href={PHONE_HREF}
-          className="group mt-8 inline-flex items-center gap-3 pl-2 pr-6 py-2 rounded-full bg-[#0E2925] text-white shadow-[0_12px_32px_-12px_rgba(14,41,37,0.6)] hover:bg-[#57B836] transition-colors cursor-pointer"
+        <Link
+          to="/contact-us"
+          className="mt-8 px-8 py-3.5 rounded-full bg-[#57B836] text-white text-sm font-semibold hover:bg-[#0E2925] transition-all shadow-md hover:shadow-lg active:scale-[0.98] inline-flex items-center gap-2 cursor-pointer"
         >
-          <span className="relative w-10 h-10 rounded-full bg-[#57B836] group-hover:bg-white/20 flex items-center justify-center transition-colors">
-            <span className="absolute inset-0 rounded-full bg-[#57B836] animate-ping motion-reduce:animate-none opacity-40 group-hover:opacity-0" />
-            <PhoneCall className="relative w-4 h-4" />
-          </span>
-          <span className="text-left leading-tight">
-            <span className="block text-[11px] uppercase tracking-wider text-white/60 group-hover:text-white/80">
-              Call a Billing Specialist
-            </span>
-            <span className="block text-lg font-semibold tabular-nums">{PHONE_DISPLAY}</span>
-          </span>
-        </a>
+          <span>Schedule a 1:1 Meeting</span>
+          <ArrowRight className="w-4 h-4" />
+        </Link>
       </motion.section>
 
       {/* 2. Specialty Labels (each one calls us) */}
       <section className="max-w-4xl mx-auto">
+        <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836] block text-center mb-6">
+          Specialties We Serve
+        </span>
+
         <motion.ul
           initial="hidden"
           whileInView="visible"
@@ -135,11 +132,7 @@ export const SpecialtiesPage: React.FC<SpecialtiesPageProps> = ({ onOpenAudit })
         </motion.ul>
 
         <p className="mt-6 text-center text-xs text-[#747773]">
-          Tap any specialty to call us directly at{' '}
-          <a href={PHONE_HREF} className="font-semibold text-[#0E2925] hover:text-[#57B836] transition-colors">
-            {PHONE_DISPLAY}
-          </a>
-          .
+          Select your specialty to explore the billing support available for your practice.
         </p>
       </section>
 
@@ -153,11 +146,14 @@ export const SpecialtiesPage: React.FC<SpecialtiesPageProps> = ({ onOpenAudit })
       >
         <div className="space-y-2 max-w-xl">
           <span className="text-xs font-semibold uppercase tracking-wider text-[#EAF7E6]/70">
-            Don’t See Your Specialty?
+            Not Listed Above?
           </span>
           <h2 className="text-3xl sm:text-4xl font-editorial text-white text-balance">
-            Call Us Anyway. We’ll Tell You Honestly If We’re a Fit.
+            Your Specialty Could Still Be a Fit.
           </h2>
+          <p className="text-sm sm:text-base text-[#EAF7E6]/80 leading-relaxed">
+            Tell us about your practice and billing needs. We’ll help determine whether Apex can support your revenue cycle.
+          </p>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto shrink-0">
@@ -172,7 +168,7 @@ export const SpecialtiesPage: React.FC<SpecialtiesPageProps> = ({ onOpenAudit })
             onClick={onOpenAudit}
             className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white/10 text-white text-sm font-semibold hover:bg-white/20 transition-all border border-white/20 inline-flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Get Free Practice Audit</span>
+            <span>Get a Free Practice Audit</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
