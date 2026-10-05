@@ -68,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
             onClick={onOpenAudit}
             className="px-5 py-2.5 text-xs font-semibold text-white bg-[#57B836] hover:bg-[#0E2925] rounded-full transition-all shadow-sm hover:shadow active:scale-[0.98] whitespace-nowrap cursor-pointer inline-flex items-center gap-1.5"
           >
-            <span>Free Billing Audit</span>
+            <span>Get a Free Practice Audit</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
