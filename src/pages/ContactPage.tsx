@@ -12,17 +12,19 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { ApexLogo } from '../components/ApexLogo';
-import { cubicEase } from '../utils/animations';
+import { cubicEase, defaultViewport } from '../utils/animations';
 import { useFormSubmission } from '../hooks/useFormSubmission';
 import { isFilled, isValidEmail, isValidPhone } from '../utils/formValidation';
+
+const PHONE_HREF = 'tel:+13053803263';
 
 export const ContactPage: React.FC = () => {
   const { submit, isSubmitting, isSuccess, errorMessage, reset, honeypotProps } = useFormSubmission();
   const [formData, setFormData] = useState({
     practiceName: '',
-    specialty: 'Primary Care / Internal Medicine',
-    monthlyVolume: '$125,000 - $300,000/mo',
-    ehrSystem: 'athenahealth',
+    specialty: '',
+    monthlyVolume: '',
+    ehrSystem: '',
     providerName: '',
     phone: '',
     workEmail: '',
@@ -44,13 +46,13 @@ export const ContactPage: React.FC = () => {
       replyTo: formData.workEmail,
       fields: {
         'Practice Name': formData.practiceName,
-        'Specialty': formData.specialty,
-        'Monthly Collections': formData.monthlyVolume,
-        'EHR / Billing Software': formData.ehrSystem,
+        'Specialty': formData.specialty || '—',
+        'Monthly Collections': formData.monthlyVolume || '—',
+        'EHR / EMR System': formData.ehrSystem || '—',
         'Name & Title': formData.providerName,
         'Phone': formData.phone,
-        'Work Email': formData.workEmail,
-        'Operational Challenge': formData.notes || '—',
+        'Professional Email': formData.workEmail,
+        'Main Billing Challenge': formData.notes || '—',
       },
     });
   };
@@ -75,13 +77,13 @@ export const ContactPage: React.FC = () => {
         className="text-center max-w-3xl mx-auto pt-6"
       >
         <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836] block mb-3">
-          Practice Intake & Consultation
+          Get in Touch
         </span>
         <h1 className="text-4xl sm:text-6xl font-display text-[#0E2925] leading-[1.1]">
-          Let&apos;s Accelerate Your Practice Revenue.
+          We’re Here to Help With Your Billing.
         </h1>
         <p className="mt-4 text-lg sm:text-xl font-display font-light text-[#747773] leading-snug max-w-2xl mx-auto">
-          Request a confidential 48-hour practice billing audit or schedule a direct consultation with a Senior Revenue Cycle Director.
+          Have a question about your billing or revenue cycle? Reach out to our team and tell us what your practice needs help with.
         </p>
       </motion.section>
 
@@ -92,10 +94,10 @@ export const ContactPage: React.FC = () => {
           <div className="rounded-[32px] bg-[#0E2925] text-[#F8FAF7] p-8 sm:p-10 space-y-6 shadow-lg">
             <ApexLogo variant="dark-bg" size="md" className="mb-2" />
             <span className="text-xs font-display font-bold uppercase tracking-wider text-[#EAF7E6]">
-              Direct Provider Channels
+              Direct Provider Support
             </span>
             <h2 className="text-3xl font-display text-white">
-              Speak With Our Revenue Operations Team
+              Speak With Our Revenue Cycle Team
             </h2>
 
             <div className="space-y-4 pt-2 text-sm text-[#EAF7E6]">
@@ -104,7 +106,7 @@ export const ContactPage: React.FC = () => {
                   <Phone className="w-4 h-4 text-[#EAF7E6]" />
                 </div>
                 <div>
-                  <div className="text-[11px] uppercase tracking-wider text-white/60">Toll-Free Provider Hotline</div>
+                  <div className="text-[11px] uppercase tracking-wider text-white/60">Provider Phone</div>
                   <div className="font-semibold text-white text-base">305-380-3263</div>
                 </div>
               </div>
@@ -114,7 +116,7 @@ export const ContactPage: React.FC = () => {
                   <Mail className="w-4 h-4 text-[#EAF7E6]" />
                 </div>
                 <div>
-                  <div className="text-[11px] uppercase tracking-wider text-white/60">Audit & Practice Inquiries</div>
+                  <div className="text-[11px] uppercase tracking-wider text-white/60">Billing & Practice Inquiries</div>
                   <div className="font-semibold text-white text-base">sales@apexmb.com</div>
                 </div>
               </div>
@@ -124,8 +126,8 @@ export const ContactPage: React.FC = () => {
                   <ShieldCheck className="w-4 h-4 text-[#EAF7E6]" />
                 </div>
                 <div>
-                  <div className="text-[11px] uppercase tracking-wider text-white/60">HIPAA Compliance Verification</div>
-                  <div className="font-semibold text-white">100% HIPAA-Compliant</div>
+                  <div className="text-[11px] uppercase tracking-wider text-white/60">100% HIPAA-Compliant Processes</div>
+                  <div className="font-semibold text-white">Patient Information Handled Responsibly</div>
                 </div>
               </div>
             </div>
@@ -168,13 +170,13 @@ export const ContactPage: React.FC = () => {
                 <input {...honeypotProps} />
                 <div className="space-y-2 pb-4 border-b border-[#E2E7DF]">
                   <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
-                    Confidential Practice Evaluation
+                    Free Practice Audit
                   </span>
                   <h2 className="text-3xl font-display text-[#0E2925]">
-                    Request a Practice Revenue Audit
+                    Get a Clearer View of Your Revenue Cycle
                   </h2>
                   <p className="text-xs sm:text-sm text-[#747773]">
-                    Fill in your practice parameters below. A Senior Revenue Director will prepare your comparative benchmark report within 48 hours.
+                    Share a few details about your practice and current billing setup. Our team will review the information and identify areas that may need closer attention.
                   </p>
                 </div>
 
@@ -201,6 +203,7 @@ export const ContactPage: React.FC = () => {
                       onChange={(e) => setFormData({ ...formData, specialty: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E2E7DF] text-xs sm:text-sm text-[#1E2423] focus:outline-none focus:border-[#57B836] focus:ring-1 focus:ring-[#57B836]"
                     >
+                      <option value="" disabled>Select Specialty</option>
                       <option value="Primary Care / Internal Medicine">Primary Care / Internal Medicine</option>
                       <option value="Behavioral Health / Psychiatry">Behavioral Health / Psychiatry</option>
                       <option value="Cardiology">Cardiology</option>
@@ -223,6 +226,7 @@ export const ContactPage: React.FC = () => {
                       onChange={(e) => setFormData({ ...formData, monthlyVolume: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E2E7DF] text-xs sm:text-sm text-[#1E2423] focus:outline-none focus:border-[#57B836] focus:ring-1 focus:ring-[#57B836]"
                     >
+                      <option value="" disabled>Select Monthly Collections</option>
                       <option value="Under $50,000/mo">Under $50,000 / month</option>
                       <option value="$50,000 - $125,000/mo">$50,000 – $125,000 / month</option>
                       <option value="$125,000 - $300,000/mo">$125,000 – $300,000 / month</option>
@@ -233,13 +237,14 @@ export const ContactPage: React.FC = () => {
 
                   <div>
                     <label className="block text-xs font-semibold text-[#1E2423] mb-1.5">
-                      Current EHR / Billing Software
+                      Current EHR / EMR System
                     </label>
                     <select
                       value={formData.ehrSystem}
                       onChange={(e) => setFormData({ ...formData, ehrSystem: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E2E7DF] text-xs sm:text-sm text-[#1E2423] focus:outline-none focus:border-[#57B836] focus:ring-1 focus:ring-[#57B836]"
                     >
+                      <option value="" disabled>Select Current System</option>
                       <option value="athenahealth">athenahealth</option>
                       <option value="Epic Systems">Epic Systems</option>
                       <option value="eClinicalWorks">eClinicalWorks</option>
@@ -260,7 +265,7 @@ export const ContactPage: React.FC = () => {
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Dr. Jordan Hayes"
+                      placeholder="e.g. Dr. Jordan Hayes, Practice Manager"
                       value={formData.providerName}
                       onChange={(e) => setFormData({ ...formData, providerName: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E2E7DF] text-xs sm:text-sm text-[#1E2423] focus:outline-none focus:border-[#57B836] focus:ring-1 focus:ring-[#57B836]"
@@ -283,12 +288,12 @@ export const ContactPage: React.FC = () => {
 
                 <div>
                   <label className="block text-xs font-semibold text-[#1E2423] mb-1.5">
-                    Professional Work Email <span className="text-red-500" aria-hidden="true">*</span>
+                    Professional Email <span className="text-red-500" aria-hidden="true">*</span>
                   </label>
                   <input
                     type="email"
                     required
-                    placeholder="jordan@summitortho.com"
+                    placeholder="name@practice.com"
                     value={formData.workEmail}
                     onChange={(e) => setFormData({ ...formData, workEmail: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E2E7DF] text-xs sm:text-sm text-[#1E2423] focus:outline-none focus:border-[#57B836] focus:ring-1 focus:ring-[#57B836]"
@@ -297,11 +302,11 @@ export const ContactPage: React.FC = () => {
 
                 <div>
                   <label className="block text-xs font-semibold text-[#1E2423] mb-1.5">
-                    Primary Operational Challenge or Payer Concern
+                    Main Billing or Revenue Cycle Challenge
                   </label>
                   <textarea
                     rows={3}
-                    placeholder="e.g. High commercial claim denials, staff turnover, or aging A/R balances over 90 days..."
+                    placeholder="Tell us where claims, denials, A/R, or payments are creating the most difficulty."
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#E2E7DF] text-xs sm:text-sm text-[#1E2423] focus:outline-none focus:border-[#57B836] focus:ring-1 focus:ring-[#57B836] resize-none"
@@ -311,7 +316,7 @@ export const ContactPage: React.FC = () => {
                 <div className="p-3 bg-[#F8FAF7] rounded-xl border border-[#E2E7DF] flex items-start gap-2.5 text-xs text-[#747773]">
                   <ShieldCheck className="w-4 h-4 text-[#57B836] shrink-0 mt-0.5" />
                   <span>
-                    Your practice data is 100% confidential and protected under standard HIPAA Business Associate Agreement rules.
+                    Your information is handled through HIPAA-compliant processes and used only to respond to your practice inquiry.
                   </span>
                 </div>
 
@@ -330,12 +335,12 @@ export const ContactPage: React.FC = () => {
                   disabled={isSubmitting || !canSubmit}
                   className="w-full py-4 rounded-full bg-[#57B836] text-white text-xs sm:text-sm font-display font-bold hover:bg-[#0E2925] transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#57B836]"
                 >
-                  <span>{isSubmitting ? 'Sending Your Practice Information...' : 'Submit Practice Information for 48-Hour Audit'}</span>
+                  <span>{isSubmitting ? 'Sending Your Practice Information...' : 'Get a Free Practice Audit'}</span>
                   {!isSubmitting && <ArrowRight className="w-4 h-4" />}
                 </button>
                 {!canSubmit && (
                   <p className="text-center text-[11px] text-[#747773]">
-                    Fill in all fields marked * with a valid email and phone number to submit.
+                    Fields marked with * are required.
                   </p>
                 )}
               </form>
@@ -374,6 +379,35 @@ export const ContactPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* 3. Direct Conversation CTA */}
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={defaultViewport}
+        transition={{ duration: 0.7, ease: cubicEase }}
+        className="rounded-[32px] sm:rounded-[40px] bg-[#0E2925] text-white p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left"
+      >
+        <div className="space-y-2 max-w-xl">
+          <span className="text-xs font-display font-bold uppercase tracking-wider text-[#EAF7E6]/70">
+            Prefer a Direct Conversation?
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-display text-white text-balance">
+            Schedule a 1:1 Billing Consultation
+          </h2>
+          <p className="text-sm sm:text-base text-[#EAF7E6]/80 leading-relaxed">
+            Talk directly with our team about your current billing setup, revenue cycle challenges, and where your practice may need additional support.
+          </p>
+        </div>
+
+        <a
+          href={PHONE_HREF}
+          className="w-full sm:w-auto shrink-0 px-8 py-3.5 rounded-full bg-[#57B836] text-white text-sm font-display font-bold hover:bg-white hover:text-[#0E2925] transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <span>Schedule a 1:1 Meeting</span>
+          <ArrowRight className="w-4 h-4" />
+        </a>
+      </motion.section>
     </div>
   );
 };
