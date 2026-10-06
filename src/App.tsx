@@ -23,7 +23,6 @@ export default function App() {
   // Scroll to top on every navigation (including re-clicking the current page),
   // unless the URL targets an in-page anchor such as /services#comparison.
   useEffect(() => {
-    console.log('location.key:', location.key, 'location.hash:', location.hash);
     if (!location.hash) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
