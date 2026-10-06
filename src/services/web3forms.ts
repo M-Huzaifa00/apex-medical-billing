@@ -23,7 +23,6 @@ export const sendFormSubmission = async ({
   fields,
 }: FormSubmission): Promise<void> => {
   const accessKey = import.meta.env.VITE_WEB3FORMS_KEY
-  console.log('VITE_WEB3FORMS_KEY:', accessKey);
   if (!accessKey) {
     throw new Error('Missing VITE_WEB3FORMS_KEY. Add your Web3Forms access key to .env and restart the dev server.');
   }
