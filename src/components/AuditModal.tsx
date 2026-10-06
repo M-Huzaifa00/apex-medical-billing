@@ -100,12 +100,12 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
                 <div className="mb-6">
                   <div className="flex items-center justify-between gap-4 mb-3">
                     <ApexLogo size="sm" />
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#57B836]/10 text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#57B836]/10 text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
                       <ShieldCheck className="w-3.5 h-3.5 text-[#57B836]" />
                       <span>HIPAA-Compliant</span>
                     </div>
                   </div>
-                  <h3 id="audit-modal-title" className="text-3xl sm:text-4xl font-editorial text-[#0E2925] leading-tight">
+                  <h3 id="audit-modal-title" className="text-3xl sm:text-4xl font-display text-[#0E2925] leading-tight">
                     Request Your Practice Billing Audit
                   </h3>
                   <p className="mt-2 text-sm text-[#747773] max-w-lg">
@@ -239,7 +239,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
                         <button
                           type="submit"
                           disabled={!isProfileComplete}
-                          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#57B836] text-white text-sm font-medium hover:bg-[#0E2925] transition-colors shadow-sm cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#57B836]"
+                          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#57B836] text-white text-sm font-display font-bold hover:bg-[#0E2925] transition-colors shadow-sm cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#57B836]"
                         >
                           <span>Continue to Schedule</span>
                           <ArrowRight className="w-4 h-4" />
@@ -337,7 +337,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
                         <button
                           type="submit"
                           disabled={isSubmitting || !isContactComplete}
-                          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#57B836] text-white text-sm font-medium hover:bg-[#0E2925] transition-colors shadow-sm cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#57B836]"
+                          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#57B836] text-white text-sm font-display font-bold hover:bg-[#0E2925] transition-colors shadow-sm cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#57B836]"
                         >
                           {isSubmitting ? 'Preparing Your Audit...' : 'Submit Audit Request'}
                         </button>
@@ -359,11 +359,11 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
                 <div className="w-16 h-16 rounded-full bg-[#57B836]/10 text-[#57B836] flex items-center justify-center mx-auto mb-4">
                   <CheckCircle2 className="w-9 h-9" />
                 </div>
-                <h3 className="text-3xl font-editorial text-[#0E2925] mb-2">
+                <h3 className="text-3xl font-display text-[#0E2925] mb-2">
                   Audit Request Received
                 </h3>
                 <p className="text-sm text-[#747773] max-w-md mx-auto mb-6">
-                  Thank you, {formData.providerName || 'Doctor'}. A Senior Revenue Cycle Director from Apex will review your practice profile ({formData.practiceName || 'your practice'}) and reach out within 24–48 hours at <strong>{formData.workEmail}</strong>.
+                  Thank you, {formData.providerName || 'Doctor'}. A Senior Revenue Cycle Director from APEX will review your practice profile ({formData.practiceName || 'your practice'}) and reach out within 24–48 hours at <strong>{formData.workEmail}</strong>.
                 </p>
 
                 <div className="max-w-md mx-auto p-4 rounded-2xl bg-white border border-[#E2E7DF] text-left mb-6 text-xs space-y-2">
@@ -380,7 +380,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
 
                 <button
                   onClick={resetAndClose}
-                  className="px-6 py-2.5 rounded-full bg-[#57B836] text-white text-xs font-semibold hover:bg-[#0E2925] transition-colors cursor-pointer"
+                  className="px-6 py-2.5 rounded-full bg-[#57B836] text-white text-xs font-display font-bold hover:bg-[#0E2925] transition-colors cursor-pointer"
                 >
                   Return to Website
                 </button>

@@ -74,13 +74,13 @@ export const ContactPage: React.FC = () => {
         transition={{ duration: 0.8, ease: cubicEase }}
         className="text-center max-w-3xl mx-auto pt-6"
       >
-        <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836] block mb-3">
+        <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836] block mb-3">
           Practice Intake & Consultation
         </span>
-        <h1 className="text-4xl sm:text-6xl font-editorial font-normal text-[#0E2925] leading-[1.15]">
+        <h1 className="text-4xl sm:text-6xl font-display text-[#0E2925] leading-[1.1]">
           Let&apos;s Accelerate Your Practice Revenue.
         </h1>
-        <p className="mt-4 text-lg text-[#747773] leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-4 text-lg sm:text-xl font-display font-light text-[#747773] leading-snug max-w-2xl mx-auto">
           Request a confidential 48-hour practice billing audit or schedule a direct consultation with a Senior Revenue Cycle Director.
         </p>
       </motion.section>
@@ -91,10 +91,10 @@ export const ContactPage: React.FC = () => {
         <div className="lg:col-span-5 space-y-8">
           <div className="rounded-[32px] bg-[#0E2925] text-[#F8FAF7] p-8 sm:p-10 space-y-6 shadow-lg">
             <ApexLogo variant="dark-bg" size="md" className="mb-2" />
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#EAF7E6]">
+            <span className="text-xs font-display font-bold uppercase tracking-wider text-[#EAF7E6]">
               Direct Provider Channels
             </span>
-            <h2 className="text-3xl font-editorial text-white">
+            <h2 className="text-3xl font-display text-white">
               Speak With Our Revenue Operations Team
             </h2>
 
@@ -133,7 +133,7 @@ export const ContactPage: React.FC = () => {
 
           {/* Office Location */}
           <div className="space-y-4">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+            <h3 className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
               Office Location
             </h3>
             <div className="space-y-3">
@@ -167,10 +167,10 @@ export const ContactPage: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <input {...honeypotProps} />
                 <div className="space-y-2 pb-4 border-b border-[#E2E7DF]">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+                  <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
                     Confidential Practice Evaluation
                   </span>
-                  <h2 className="text-3xl font-editorial text-[#0E2925]">
+                  <h2 className="text-3xl font-display text-[#0E2925]">
                     Request a Practice Revenue Audit
                   </h2>
                   <p className="text-xs sm:text-sm text-[#747773]">
@@ -328,7 +328,7 @@ export const ContactPage: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting || !canSubmit}
-                  className="w-full py-4 rounded-full bg-[#57B836] text-white text-xs sm:text-sm font-semibold hover:bg-[#0E2925] transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#57B836]"
+                  className="w-full py-4 rounded-full bg-[#57B836] text-white text-xs sm:text-sm font-display font-bold hover:bg-[#0E2925] transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#57B836]"
                 >
                   <span>{isSubmitting ? 'Sending Your Practice Information...' : 'Submit Practice Information for 48-Hour Audit'}</span>
                   {!isSubmitting && <ArrowRight className="w-4 h-4" />}
@@ -344,7 +344,7 @@ export const ContactPage: React.FC = () => {
                 <div className="w-16 h-16 rounded-full bg-[#57B836]/10 text-[#57B836] flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-9 h-9" />
                 </div>
-                <h3 className="text-3xl font-editorial text-[#0E2925]">
+                <h3 className="text-3xl font-display text-[#0E2925]">
                   Audit Request Confirmed
                 </h3>
                 <p className="text-sm text-[#747773] max-w-md mx-auto">
@@ -365,7 +365,7 @@ export const ContactPage: React.FC = () => {
 
                 <button
                   onClick={reset}
-                  className="px-6 py-2.5 rounded-full bg-[#57B836] text-white text-xs font-semibold hover:bg-[#0E2925] transition-colors cursor-pointer"
+                  className="px-6 py-2.5 rounded-full bg-[#57B836] text-white text-xs font-display font-bold hover:bg-[#0E2925] transition-colors cursor-pointer"
                 >
                   Submit Another Inquiry
                 </button>

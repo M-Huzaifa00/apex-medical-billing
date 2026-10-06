@@ -71,13 +71,13 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
         transition={{ duration: 0.8, ease: cubicEase }}
         className="text-center max-w-3xl mx-auto pt-6"
       >
-        <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836] block mb-3">
-          About Apex Medical Billing
+        <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836] block mb-3">
+          About APEX Medical Billing
         </span>
-        <h1 className="text-4xl sm:text-6xl font-editorial font-normal text-[#0E2925] leading-[1.15]">
+        <h1 className="text-4xl sm:text-6xl font-display text-[#0E2925] leading-[1.1]">
           Every Healthcare Practice Deserves a Dependable Billing Partner.
         </h1>
-        <p className="mt-4 text-lg text-[#747773] leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-4 text-lg sm:text-xl font-display font-light text-[#747773] leading-snug max-w-2xl mx-auto">
           We support healthcare practices across all 50 U.S. states with medical billing and revenue cycle services that help manage collections, reduce administrative work, and keep claims and payments easier to track.
         </p>
       </motion.section>
@@ -98,10 +98,10 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0E2925]/90 via-[#0E2925]/30 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8 text-white">
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#EAF7E6]">
+            <span className="text-xs font-display font-bold uppercase tracking-wider text-[#EAF7E6]">
               A Message From Our CEO
             </span>
-            <p className="text-lg font-editorial mt-1 text-white">
+            <p className="text-lg font-display mt-1 text-white">
               “Practice owners should have a clear view of their revenue and confidence in the team managing it.”
             </p>
             <p className="text-xs text-[#EAF7E6]/70 mt-2 font-medium">
@@ -112,10 +112,10 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
 
         <div className="lg:col-span-6 space-y-6">
           <div className="space-y-3">
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+            <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
               Who We Are
             </span>
-            <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925] leading-snug">
+            <h2 className="text-3xl sm:text-4xl font-display text-[#0E2925] leading-[1.1]">
               From Claims to Collections, We Help Keep Revenue Moving.
             </h2>
           </div>
@@ -127,11 +127,11 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
           </p>
           <div className="pt-2 grid grid-cols-2 gap-4">
             <div className="p-4 rounded-2xl bg-[#EAF7E6]/60 border border-[#57B836]/20">
-              <div className="text-2xl font-editorial text-[#0E2925]">100%</div>
+              <div className="text-2xl font-display font-medium text-[#0E2925]">100%</div>
               <div className="text-xs text-[#747773] font-medium mt-0.5">HIPAA-Compliant Processes</div>
             </div>
             <div className="p-4 rounded-2xl bg-[#E6F7FA]/60 border border-[#00A7C7]/20">
-              <div className="text-2xl font-editorial text-[#0E2925]">50 States</div>
+              <div className="text-2xl font-display font-medium text-[#0E2925]">50 States</div>
               <div className="text-xs text-[#747773] font-medium mt-0.5">Nationwide Billing Support</div>
             </div>
           </div>
@@ -141,10 +141,10 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
       {/* 3. Core Values Grid */}
       <section className="space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+          <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
             Our Operating Principles
           </span>
-          <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925]">
+          <h2 className="text-3xl sm:text-4xl font-display text-[#0E2925]">
             The Standards Behind How We Work
           </h2>
         </div>
@@ -164,7 +164,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
                 <div className="w-12 h-12 rounded-2xl bg-[#57B836]/10 text-[#57B836] flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-editorial text-[#0E2925] mb-2">{val.title}</h3>
+                <h3 className="text-xl font-display text-[#0E2925] mb-2">{val.title}</h3>
                 <p className="text-sm text-[#747773] leading-relaxed">{val.desc}</p>
                 <div className="pt-4 mt-4 border-t border-[#E2E7DF] flex items-center gap-2 text-xs font-semibold text-[#57B836]">
                   <CheckCircle2 className="w-4 h-4 shrink-0" />
@@ -180,10 +180,10 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
       <section className="rounded-[32px] sm:rounded-[40px] bg-white border border-[#E2E7DF] p-8 sm:p-12 shadow-sm">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-5 space-y-4">
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+            <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
               Security & Compliance
             </span>
-            <h2 className="text-3xl font-editorial text-[#0E2925]">
+            <h2 className="text-3xl font-display text-[#0E2925]">
               Patient Data Handled With Care
             </h2>
             <p className="text-sm text-[#747773] leading-relaxed">
@@ -213,14 +213,14 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
 
       {/* 5. Measured Impact Banner */}
       <section className="rounded-[32px] sm:rounded-[40px] bg-[#0E2925] text-white p-8 sm:p-14 relative overflow-hidden">
-        <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836] block text-center mb-8 relative z-10">
-          Apex at a Glance
+        <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836] block text-center mb-8 relative z-10">
+          APEX at a Glance
         </span>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
           {glanceStats.map((stat) => (
             <div key={stat.label}>
-              <div className="text-4xl sm:text-5xl font-editorial text-[#EAF7E6]">{stat.value}</div>
+              <div className="text-4xl sm:text-5xl font-display font-medium text-[#EAF7E6]">{stat.value}</div>
               <div className="text-xs text-white/70 uppercase tracking-wider mt-1">{stat.label}</div>
             </div>
           ))}
@@ -229,14 +229,14 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({ onOpenAudit }) => {
         <div className="mt-10 pt-8 border-t border-white/10 text-center relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             to="/contact-us"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#57B836] text-white text-xs font-semibold hover:bg-white hover:text-[#0E2925] transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#57B836] text-white text-xs font-display font-bold hover:bg-white hover:text-[#0E2925] transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>Schedule a 1:1 Meeting</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
           <button
             onClick={onOpenAudit}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/10 text-white text-xs font-semibold hover:bg-white/20 transition-all border border-white/20 inline-flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/10 text-white text-xs font-display font-bold hover:bg-white/20 transition-all border border-white/20 inline-flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>Get a Free Practice Audit</span>
           </button>

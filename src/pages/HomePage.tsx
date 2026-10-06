@@ -17,11 +17,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
   const pageGateways = [
     {
       title: 'About Us',
-      subtitle: 'The People Behind Apex',
+      subtitle: 'The People Behind APEX',
       to: '/about-us',
       description:
-        'Get to know the team and approach behind Apex, from accurate billing and clear communication to consistent attention to your revenue cycle.',
-      cta: 'Get to Know Apex',
+        'Get to know the team and approach behind APEX, from accurate billing and clear communication to consistent attention to your revenue cycle.',
+      cta: 'Get to Know APEX',
       icon: Users,
       badge: '18+ Specialties',
     },
@@ -37,7 +37,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
     },
     {
       title: 'Why Choose Us',
-      subtitle: 'The Apex Approach',
+      subtitle: 'The APEX Approach',
       to: '/why-choose-us',
       description:
         'Stay informed about where claims stand, what needs attention, and what comes next through dedicated billing support and consistent communication.',
@@ -74,10 +74,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
       {/* 5. Streamlined 4-Page Gateway (Clean portal into the 4 core pages) */}
       <section className="px-4 sm:px-6 lg:px-8 py-10 max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
-            Get to Know Apex
+          <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
+            Get to Know APEX
           </span>
-          <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925]">
+          <h2 className="text-3xl sm:text-4xl font-display text-[#0E2925]">
             The Billing Support Your Practice Needs
           </h2>
           <p className="text-sm text-[#747773]">
@@ -108,10 +108,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
                   </div>
 
                   <div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-[#747773]">
+                    <span className="text-xs font-display font-bold uppercase tracking-wider text-[#747773]">
                       {item.subtitle}
                     </span>
-                    <h3 className="text-xl font-editorial text-[#0E2925] mt-0.5">
+                    <h3 className="text-xl font-display text-[#0E2925] mt-0.5">
                       {item.title}
                     </h3>
                   </div>
@@ -124,7 +124,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenAudit }) => {
                 <div className="pt-6 mt-6 border-t border-[#E2E7DF]">
                   <Link
                     to={item.to}
-                    className="w-full py-2.5 px-4 rounded-xl bg-[#F8FAF7] hover:bg-[#57B836] text-[#0E2925] hover:text-white text-xs font-semibold transition-all inline-flex items-center justify-between group-hover:bg-[#57B836] group-hover:text-white cursor-pointer"
+                    className="w-full py-2.5 px-4 rounded-xl bg-[#F8FAF7] hover:bg-[#57B836] text-[#0E2925] hover:text-white text-xs font-display font-bold transition-all inline-flex items-center justify-between group-hover:bg-[#57B836] group-hover:text-white cursor-pointer"
                   >
                     <span>{item.cta}</span>
                     <ArrowRight className="w-3.5 h-3.5" />

@@ -64,19 +64,19 @@ export const SpecialtiesPage: React.FC<SpecialtiesPageProps> = ({ onOpenAudit })
         transition={{ duration: 0.8, ease: cubicEase }}
         className="text-center max-w-3xl mx-auto pt-6"
       >
-        <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836] block mb-3">
+        <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836] block mb-3">
           Specialty-Focused Billing Support
         </span>
-        <h1 className="text-4xl sm:text-6xl font-editorial font-normal text-[#0E2925] leading-[1.15] text-balance">
+        <h1 className="text-4xl sm:text-6xl font-display text-[#0E2925] leading-[1.1] text-balance">
           Billing Expertise Across 18+ Healthcare Specialties.
         </h1>
-        <p className="mt-4 text-lg text-[#747773] leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-4 text-lg sm:text-xl font-display font-light text-[#747773] leading-snug max-w-2xl mx-auto">
           Every specialty comes with different requirements. Our billing support adapts to those differences to help keep claims accurate, follow-up consistent, and revenue moving.
         </p>
 
         <Link
           to="/contact-us"
-          className="mt-8 px-8 py-3.5 rounded-full bg-[#57B836] text-white text-sm font-semibold hover:bg-[#0E2925] transition-all shadow-md hover:shadow-lg active:scale-[0.98] inline-flex items-center gap-2 cursor-pointer"
+          className="mt-8 px-8 py-3.5 rounded-full bg-[#57B836] text-white text-sm font-display font-bold hover:bg-[#0E2925] transition-all shadow-md hover:shadow-lg active:scale-[0.98] inline-flex items-center gap-2 cursor-pointer"
         >
           <span>Schedule a 1:1 Meeting</span>
           <ArrowRight className="w-4 h-4" />
@@ -85,7 +85,7 @@ export const SpecialtiesPage: React.FC<SpecialtiesPageProps> = ({ onOpenAudit })
 
       {/* 2. Specialty Labels (each one calls us) */}
       <section className="max-w-4xl mx-auto">
-        <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836] block text-center mb-6">
+        <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836] block text-center mb-6">
           Specialties We Serve
         </span>
 
@@ -145,28 +145,28 @@ export const SpecialtiesPage: React.FC<SpecialtiesPageProps> = ({ onOpenAudit })
         className="rounded-[32px] sm:rounded-[40px] bg-[#0E2925] text-white p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left"
       >
         <div className="space-y-2 max-w-xl">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#EAF7E6]/70">
+          <span className="text-xs font-display font-bold uppercase tracking-wider text-[#EAF7E6]/70">
             Not Listed Above?
           </span>
-          <h2 className="text-3xl sm:text-4xl font-editorial text-white text-balance">
+          <h2 className="text-3xl sm:text-4xl font-display text-white text-balance">
             Your Specialty Could Still Be a Fit.
           </h2>
           <p className="text-sm sm:text-base text-[#EAF7E6]/80 leading-relaxed">
-            Tell us about your practice and billing needs. We’ll help determine whether Apex can support your revenue cycle.
+            Tell us about your practice and billing needs. We’ll help determine whether APEX can support your revenue cycle.
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto shrink-0">
           <a
             href={PHONE_HREF}
-            className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#57B836] text-white text-sm font-semibold hover:bg-white hover:text-[#0E2925] transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#57B836] text-white text-sm font-display font-bold hover:bg-white hover:text-[#0E2925] transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer"
           >
             <PhoneCall className="w-4 h-4" />
             <span className="tabular-nums">{PHONE_DISPLAY}</span>
           </a>
           <button
             onClick={onOpenAudit}
-            className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white/10 text-white text-sm font-semibold hover:bg-white/20 transition-all border border-white/20 inline-flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white/10 text-white text-sm font-display font-bold hover:bg-white/20 transition-all border border-white/20 inline-flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>Get a Free Practice Audit</span>
             <ArrowRight className="w-4 h-4" />

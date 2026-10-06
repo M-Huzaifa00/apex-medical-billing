@@ -1,9 +1,61 @@
 @import "tailwindcss";
 
+/*
+ * Brand typography (APEX Brand Book, Typography).
+ * - Display, for headlines, subheads and buttons: Futura PT (self-hosted in public/Fonts/Futura).
+ * - Text, for body copy: Arial, the typeface of the logo's "MEDICAL BILLING" line.
+ *   Arimo is metric-compatible and only downloads where Arial is missing.
+ *
+ * Only the Oblique cuts of Futura PT are available, so upright text renders slanted too.
+ * There is no Bold cut: Demi covers both 600 and 700.
+ */
+@font-face {
+  font-family: "Futura PT";
+  src: url("/Fonts/Futura/FuturaPTLightOblique.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("/Fonts/Futura/FuturaPTMediumOblique.otf") format("opentype");
+  font-weight: 400 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("/Fonts/Futura/FuturaPTDemiOblique.otf") format("opentype");
+  font-weight: 600 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("/Fonts/Futura/FuturaPTExtraBoldOblique.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura PT";
+  src: url("/Fonts/Futura/FuturaPTHeavyOblique.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme {
+  --font-display: "Futura PT", "Futura", "Century Gothic", sans-serif;
+  --font-sans: Arial, "Arimo", "Helvetica Neue", Helvetica, sans-serif;
+}
+
 @layer base {
   :root {
-    --font-serif: 'Instrument Serif', Georgia, serif;
-    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --brand-primary: #57B836;
     --brand-secondary: #00A7C7;
     --brand-dark: #0E2925;
@@ -21,18 +73,12 @@
     overflow-x: hidden;
   }
 
-  h1, h2, .font-editorial {
-    font-family: var(--font-serif);
-    font-feature-settings: "cv01", "ss01";
+  /* Headlines: Display Medium with 0 tracking */
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 0;
   }
-}
-
-.font-editorial {
-  font-family: 'Instrument Serif', Georgia, serif;
-}
-
-.font-sans-clean {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 /* Custom rounded utility matching ClinicHub */

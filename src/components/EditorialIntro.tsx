@@ -23,7 +23,7 @@ export const EditorialIntro: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={defaultViewport}
             transition={{ duration: 0.6, delay: 0.15, ease: cubicEase }}
-            className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-[#EAF7E6] uppercase"
+            className="inline-flex items-center gap-2 text-xs font-display font-bold tracking-widest text-[#EAF7E6] uppercase"
           >
             <span>Billing Support Built Around Your Practice</span>
           </motion.div>
@@ -33,7 +33,7 @@ export const EditorialIntro: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={defaultViewport}
             transition={{ duration: 0.8, delay: 0.25, ease: cubicEase }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-editorial font-normal leading-[1.2] text-[#F8FAF7] text-balance"
+            className="text-3xl sm:text-5xl lg:text-6xl font-display leading-[1.1] text-[#F8FAF7] text-balance"
           >
             Medical Billing That Follows Through on the Care You’ve Already Delivered.
           </motion.h2>
@@ -51,7 +51,7 @@ export const EditorialIntro: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={defaultViewport}
             transition={{ duration: 0.8, delay: 0.5, ease: cubicEase }}
-            className="text-lg sm:text-2xl font-editorial font-normal text-[#EAF7E6] leading-relaxed max-w-2xl mx-auto text-balance"
+            className="text-lg sm:text-2xl font-display font-light text-[#EAF7E6] leading-snug max-w-2xl mx-auto text-balance"
           >
             We stay on top of claim issues and unpaid balances so your team spends less time chasing payments and more time focused on patient care.
           </motion.p>

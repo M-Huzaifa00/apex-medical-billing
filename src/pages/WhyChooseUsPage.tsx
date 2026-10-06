@@ -105,7 +105,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
   const testimonials = [
     {
       quote:
-        'Apex increased our collections by 18% in the first 90 days. Their certified coders caught documentation errors our previous billing company missed for years.',
+        'APEX increased our collections by 18% in the first 90 days. Their certified coders caught documentation errors our previous billing company missed for years.',
       author: 'Dr. Michael Chen, MD',
       title: 'Managing Partner, Apex Internal Medicine Group',
     },
@@ -126,13 +126,13 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
         transition={{ duration: 0.8, ease: cubicEase }}
         className="text-center max-w-3xl mx-auto pt-6"
       >
-        <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836] block mb-3">
+        <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836] block mb-3">
           Why Choose Us
         </span>
-        <h1 className="text-4xl sm:text-6xl font-editorial font-normal text-[#0E2925] leading-[1.15]">
+        <h1 className="text-4xl sm:text-6xl font-display text-[#0E2925] leading-[1.1]">
           Engineered to Maximize Practice Collections and Peace of Mind.
         </h1>
-        <p className="mt-4 text-lg text-[#747773] leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-4 text-lg sm:text-xl font-display font-light text-[#747773] leading-snug max-w-2xl mx-auto">
           We combine certified onshore billing specialists, advanced claim-scrubbing technology, and aggressive denial appeals to give independent clinics unrivaled financial performance.
         </p>
       </motion.section>
@@ -155,10 +155,10 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
                   <Icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+                  <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
                     {p.subtitle}
                   </span>
-                  <h2 className="text-2xl font-editorial text-[#0E2925] mt-0.5">
+                  <h2 className="text-2xl font-display text-[#0E2925] mt-0.5">
                     {p.title}
                   </h2>
                 </div>
@@ -179,14 +179,14 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
       {/* 3. The Comparison Matrix */}
       <section className="space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+          <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
             Objective Comparison
           </span>
-          <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925]">
-            How Apex Compares to Traditional Options
+          <h2 className="text-3xl sm:text-4xl font-display text-[#0E2925]">
+            How APEX Compares to Traditional Options
           </h2>
           <p className="text-sm text-[#747773]">
-            See why independent practices switch from in-house billing and generic clearinghouse agencies to Apex.
+            See why independent practices switch from in-house billing and generic clearinghouse agencies to APEX.
           </p>
         </div>
 
@@ -198,7 +198,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
                   Operational Dimension
                 </th>
                 <th className="p-5 sm:p-6 text-xs font-bold uppercase tracking-wider text-[#57B836] bg-[#57B836]/10 w-1/3">
-                  ★ Apex Medical Billing
+                  ★ APEX Medical Billing
                 </th>
                 <th className="p-5 sm:p-6 text-xs font-bold uppercase tracking-wider text-[#747773] w-1/5">
                   In-House Staff
@@ -236,14 +236,14 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
       {/* 4. Dedicated Pod Architecture */}
       <section className="rounded-[32px] sm:rounded-[40px] bg-white border border-[#E2E7DF] p-8 sm:p-12 shadow-sm space-y-8">
         <div className="max-w-2xl space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+          <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
             Our Operating Model
           </span>
-          <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925]">
+          <h2 className="text-3xl sm:text-4xl font-display text-[#0E2925]">
             Your Dedicated 4-Member Revenue Pod
           </h2>
           <p className="text-sm text-[#747773] leading-relaxed">
-            Unlike call centers where anonymous agents touch random claims, Apex assigns a permanent, dedicated clinical billing pod to your practice.
+            Unlike call centers where anonymous agents touch random claims, APEX assigns a permanent, dedicated clinical billing pod to your practice.
           </p>
         </div>
 
@@ -253,10 +253,10 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
               key={pIdx}
               className="rounded-2xl bg-[#F8FAF7] border border-[#E2E7DF] p-6 space-y-2"
             >
-              <div className="w-8 h-8 rounded-xl bg-[#57B836]/10 text-[#57B836] flex items-center justify-center font-bold text-xs">
+              <div className="w-8 h-8 rounded-xl bg-[#57B836]/10 text-[#57B836] flex items-center justify-center font-display font-bold text-xs">
                 {pIdx + 1}
               </div>
-              <h3 className="font-bold text-sm text-[#0E2925] pt-1">{pod.role}</h3>
+              <h3 className="text-sm text-[#0E2925] pt-1">{pod.role}</h3>
               <p className="text-xs text-[#747773] leading-relaxed">{pod.responsibility}</p>
             </div>
           ))}
@@ -266,10 +266,10 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
       {/* 5. Provider Testimonials */}
       <section className="space-y-6">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+          <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
             Verified Physician Feedback
           </span>
-          <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925]">
+          <h2 className="text-3xl sm:text-4xl font-display text-[#0E2925]">
             Trusted by Practice Leaders Nationwide
           </h2>
         </div>
@@ -297,19 +297,19 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
       <section className="rounded-[32px] sm:rounded-[40px] bg-[#0E2925] text-white p-8 sm:p-14 text-center space-y-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div>
-            <div className="text-4xl sm:text-5xl font-editorial text-[#EAF7E6]">98.2%</div>
+            <div className="text-4xl sm:text-5xl font-display font-medium text-[#EAF7E6]">98.2%</div>
             <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Clean Claim Rate</div>
           </div>
           <div>
-            <div className="text-4xl sm:text-5xl font-editorial text-[#EAF7E6]">&lt; 48 Hrs</div>
+            <div className="text-4xl sm:text-5xl font-display font-medium text-[#EAF7E6]">&lt; 48 Hrs</div>
             <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Denial Appeal SLA</div>
           </div>
           <div>
-            <div className="text-4xl sm:text-5xl font-editorial text-[#EAF7E6]">24.6 Days</div>
+            <div className="text-4xl sm:text-5xl font-display font-medium text-[#EAF7E6]">24.6 Days</div>
             <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Average Days in A/R</div>
           </div>
           <div>
-            <div className="text-4xl sm:text-5xl font-editorial text-[#EAF7E6]">99.4%</div>
+            <div className="text-4xl sm:text-5xl font-display font-medium text-[#EAF7E6]">99.4%</div>
             <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Client Retention</div>
           </div>
         </div>
@@ -317,14 +317,14 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={onOpenAudit}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#57B836] text-white text-xs font-semibold hover:bg-white hover:text-[#0E2925] transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#57B836] text-white text-xs font-display font-bold hover:bg-white hover:text-[#0E2925] transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>Claim Your Free Practice Audit</span>
             <ArrowRight className="w-4 h-4" />
           </button>
           <Link
             to="/contact-us"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/10 text-white text-xs font-semibold hover:bg-white/20 transition-all border border-white/20 inline-flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/10 text-white text-xs font-display font-bold hover:bg-white/20 transition-all border border-white/20 inline-flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>Contact Us</span>
           </Link>

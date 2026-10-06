@@ -66,7 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
         <div className="hidden sm:flex items-center gap-3">
           <button
             onClick={onOpenAudit}
-            className="px-5 py-2.5 text-xs font-semibold text-white bg-[#57B836] hover:bg-[#0E2925] rounded-full transition-all shadow-sm hover:shadow active:scale-[0.98] whitespace-nowrap cursor-pointer inline-flex items-center gap-1.5"
+            className="px-5 py-2.5 text-xs font-display font-bold text-white bg-[#57B836] hover:bg-[#0E2925] rounded-full transition-all shadow-sm hover:shadow active:scale-[0.98] whitespace-nowrap cursor-pointer inline-flex items-center gap-1.5"
           >
             <span>Get a Free Practice Audit</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
         <div className="flex lg:hidden items-center gap-2">
           <button
             onClick={onOpenAudit}
-            className="px-3.5 py-1.5 text-xs font-semibold text-white bg-[#57B836] rounded-full whitespace-nowrap cursor-pointer"
+            className="px-3.5 py-1.5 text-xs font-display font-bold text-white bg-[#57B836] rounded-full whitespace-nowrap cursor-pointer"
           >
             Audit
           </button>
@@ -119,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
                 setMobileMenuOpen(false);
                 onOpenAudit();
               }}
-              className="w-full py-3 text-xs font-semibold text-white bg-[#57B836] rounded-full text-center hover:bg-[#0E2925] transition-colors cursor-pointer"
+              className="w-full py-3 text-xs font-display font-bold text-white bg-[#57B836] rounded-full text-center hover:bg-[#0E2925] transition-colors cursor-pointer"
             >
               Get a Free Billing Audit
             </button>

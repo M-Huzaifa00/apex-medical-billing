@@ -53,7 +53,7 @@ export const Metrics: React.FC = () => {
               idx === 0 ? 'md:pr-10' : idx === 1 ? 'md:px-10' : 'md:pl-10'
             } pt-6 md:pt-0`}
           >
-            <div className="text-5xl sm:text-6xl font-editorial text-[#0E2925] tracking-tight tabular-nums font-normal">
+            <div className="text-5xl sm:text-6xl font-display font-medium text-[#0E2925] tabular-nums">
               {m.value}
             </div>
             <div className="mt-2 text-base font-semibold text-[#1E2423]">

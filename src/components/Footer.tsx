@@ -41,8 +41,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
               <ApexLogo variant="dark-bg" size="md" />
             </Link>
 
-            <h3 className="text-3xl sm:text-4xl font-editorial text-white font-normal leading-tight max-w-md">
-              Your Partner in Medical Billing.
+            <h3 className="text-3xl sm:text-4xl font-display text-white leading-tight max-w-md">
+              Our Foremost Priority is Your Business
             </h3>
 
             <p className="text-sm text-[#EAF7E6]/80 leading-relaxed max-w-sm">
@@ -52,7 +52,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
             <div className="pt-2">
               <button
                 onClick={onOpenAudit}
-                className="px-6 py-3 rounded-full bg-[#F8FAF7] text-[#0E2925] text-xs font-semibold hover:bg-white transition-all shadow-sm inline-flex items-center gap-2 cursor-pointer"
+                className="px-6 py-3 rounded-full bg-[#F8FAF7] text-[#0E2925] text-xs font-display font-bold hover:bg-white transition-all shadow-sm inline-flex items-center gap-2 cursor-pointer"
               >
                 <span>Get a Free Practice Audit</span>
                 <ArrowRight className="w-4 h-4" />
@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
             {/* Quick Links */}
             <div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-white/50 block mb-4">
+              <span className="text-xs font-display font-bold uppercase tracking-wider text-white/50 block mb-4">
                 Pages
               </span>
               <ul className="space-y-3 text-xs text-[#EAF7E6]">
@@ -95,7 +95,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
 
             {/* Core Services */}
             <div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-white/50 block mb-4">
+              <span className="text-xs font-display font-bold uppercase tracking-wider text-white/50 block mb-4">
                 Services
               </span>
               <ul className="space-y-3 text-xs text-[#EAF7E6]">
@@ -111,7 +111,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
 
             {/* Legal & Trust */}
             <div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-white/50 block mb-4">
+              <span className="text-xs font-display font-bold uppercase tracking-wider text-white/50 block mb-4">
                 Security & Trust
               </span>
               <ul className="space-y-3 text-xs text-[#EAF7E6]">
@@ -128,7 +128,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
-          <p>© 2026 Apex Medical Billing LLC. All rights reserved.</p>
+          <p>© 2026 APEX Medical Billing LLC. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span>HIPAA-Certified</span>
             <span>·</span>

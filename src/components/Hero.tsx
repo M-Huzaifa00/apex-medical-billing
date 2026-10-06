@@ -60,19 +60,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: cubicEase }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-editorial text-[#F8FAF7] leading-[1.05] tracking-tight text-balance"
+              className="text-4xl sm:text-5xl lg:text-6xl font-display text-[#F8FAF7] leading-[1.05] text-balance"
             >
               Accurate Medical Billing, <br />
-              Stronger Practice <span className="italic font-normal text-[#EAF7E6]">Revenue</span>
+              Stronger Practice <span className="text-[#97D388]">Revenue</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.45, ease: cubicEase }}
-              className="mt-5 sm:mt-6 text-base sm:text-lg text-[#F8FAF7]/85 font-normal leading-relaxed max-w-xl"
+              className="mt-5 sm:mt-6 text-lg sm:text-xl font-display font-light text-[#F8FAF7]/85 leading-snug max-w-xl"
             >
-              Billing backlogs take time your team needs elsewhere. Apex Medical Billing manages billing, follows up on outstanding claims, and reconciles payments to help your practice improve collections and keep revenue moving.
+              Billing backlogs take time your team needs elsewhere. APEX Medical Billing manages billing, follows up on outstanding claims, and reconciles payments to help your practice improve collections and keep revenue moving.
             </motion.p>
 
             <motion.div
@@ -83,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
             >
               <Link
                 to="/contact-us"
-                className="px-7 py-3.5 rounded-full bg-[#F8FAF7] text-[#0E2925] text-sm font-semibold hover:bg-white transition-all shadow-md hover:shadow-lg active:scale-[0.98] inline-flex items-center gap-2 group cursor-pointer"
+                className="px-7 py-3.5 rounded-full bg-[#F8FAF7] text-[#0E2925] text-sm font-display font-bold hover:bg-white transition-all shadow-md hover:shadow-lg active:scale-[0.98] inline-flex items-center gap-2 group cursor-pointer"
               >
                 <span>Schedule a 1:1 Meeting</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -91,7 +91,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
 
               <button
                 onClick={onOpenAudit}
-                className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-[#F8FAF7] border border-white/20 text-sm font-medium transition-all backdrop-blur-sm cursor-pointer"
+                className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-[#F8FAF7] border border-white/20 text-sm font-display font-bold transition-all backdrop-blur-sm cursor-pointer"
               >
                 Get a Free Practice Audit
               </button>
@@ -130,7 +130,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
                   <span className="text-[11px] font-semibold tracking-wider text-[#747773] uppercase">
                     Your Revenue at a Glance
                   </span>
-                  <h4 className="text-base font-semibold text-[#0E2925] mt-0.5">
+                  <h4 className="text-base text-[#0E2925] mt-0.5">
                     Practice Performance
                   </h4>
                 </div>
@@ -142,21 +142,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
               <div className="space-y-3.5">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-[#747773]">Claims Processed</span>
-                  <span className="text-sm font-semibold font-mono text-[#1E2423] tabular-nums">
+                  <span className="text-sm font-semibold text-[#1E2423] tabular-nums">
                     1,250
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-[#747773]">Clean Claim Rate</span>
-                  <span className="text-sm font-bold font-mono text-[#57B836] tabular-nums">
+                  <span className="text-sm font-bold text-[#57B836] tabular-nums">
                     98%
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between pt-2 border-t border-[#E2E7DF]/80">
                   <span className="text-xs font-medium text-[#1E2423]">Payments Collected</span>
-                  <span className="text-base font-bold font-mono text-[#0E2925] tabular-nums">
+                  <span className="text-base font-bold text-[#0E2925] tabular-nums">
                     $185,000
                   </span>
                 </div>

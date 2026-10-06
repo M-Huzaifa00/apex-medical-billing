@@ -254,28 +254,28 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
         transition={{ duration: 0.8, ease: cubicEase }}
         className="text-center max-w-4xl mx-auto pt-6 pb-2"
       >
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#57B836]/10 border border-[#57B836]/20 text-[#57B836] text-xs font-semibold uppercase tracking-wider mb-4">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#57B836]/10 border border-[#57B836]/20 text-[#57B836] text-xs font-display font-bold uppercase tracking-wider mb-4">
           <ShieldCheck className="w-4 h-4" />
           <span>Full-Spectrum Revenue Cycle Management</span>
         </div>
-        <h1 className="text-4xl sm:text-6xl font-editorial font-normal text-[#0E2925] leading-[1.15] text-balance">
+        <h1 className="text-4xl sm:text-6xl font-display text-[#0E2925] leading-[1.1] text-balance">
           Medical Billing Solutions Built for Stronger Practice Revenue.
         </h1>
-        <p className="mt-6 text-lg sm:text-xl text-[#747773] leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-6 text-lg sm:text-xl font-display font-light text-[#747773] leading-snug max-w-2xl mx-auto">
           From claim submission and certified coding to credentialing, A/R recovery, payment posting, and denial management, we support the revenue cycle where accuracy, follow-up, and timely action have the greatest impact on getting paid.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link
             to="/contact-us"
-            className="px-8 py-3.5 rounded-full bg-[#57B836] text-white text-sm font-semibold hover:bg-[#0E2925] transition-all shadow-md hover:shadow-lg active:scale-[0.98] inline-flex items-center gap-2 cursor-pointer"
+            className="px-8 py-3.5 rounded-full bg-[#57B836] text-white text-sm font-display font-bold hover:bg-[#0E2925] transition-all shadow-md hover:shadow-lg active:scale-[0.98] inline-flex items-center gap-2 cursor-pointer"
           >
             <span>Schedule a 1:1 Meeting</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
           <button
             onClick={onOpenAudit}
-            className="px-6 py-3.5 rounded-full bg-white text-[#1E2423] border border-[#E2E7DF] text-sm font-medium hover:border-[#57B836] transition-colors cursor-pointer"
+            className="px-6 py-3.5 rounded-full bg-white text-[#1E2423] border border-[#E2E7DF] text-sm font-display font-bold hover:border-[#57B836] transition-colors cursor-pointer"
           >
             Get a Free Practice Audit
           </button>
@@ -372,14 +372,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
               {/* Left Column: Core Overview & Workflow */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex items-center gap-3">
-                  <span className="w-12 h-12 rounded-2xl bg-[#F8FAF7] text-[#57B836] flex items-center justify-center font-bold text-base font-editorial">
+                  <span className="w-12 h-12 rounded-2xl bg-[#F8FAF7] text-[#57B836] flex items-center justify-center font-bold text-base font-display">
                     {current.number}
                   </span>
                   <div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+                    <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
                       {current.tagline}
                     </span>
-                    <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925] leading-tight">
+                    <h2 className="text-3xl sm:text-4xl font-display text-[#0E2925] leading-tight">
                       {current.title}
                     </h2>
                   </div>
@@ -390,7 +390,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
                 </p>
 
                 <div className="space-y-3 pt-2">
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-[#1E2423]">
+                  <h3 className="text-xs font-display font-bold uppercase tracking-wider text-[#1E2423]">
                     Execution Protocol & Deliverables:
                   </h3>
                   <div className="space-y-2.5">
@@ -409,10 +409,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
                 <div className="absolute -top-16 -right-16 w-48 h-48 bg-[#57B836]/40 rounded-full blur-2xl" />
 
                 <div className="relative z-10 space-y-4">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#EAF7E6]">
+                  <span className="text-xs font-display font-bold uppercase tracking-wider text-[#EAF7E6]">
                     Performance Standard
                   </span>
-                  <div className="text-3xl sm:text-4xl font-editorial text-white leading-tight">
+                  <div className="text-3xl sm:text-4xl font-display font-medium text-white leading-tight">
                     {current.kpi}
                   </div>
                   <div className="text-xs text-[#EAF7E6]/80 flex items-center gap-2">
@@ -431,7 +431,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
                 <div className="relative z-10 pt-2">
                   <button
                     onClick={onOpenAudit}
-                    className="w-full py-3.5 px-6 rounded-full bg-[#F8FAF7] text-[#0E2925] text-xs font-semibold hover:bg-white transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3.5 px-6 rounded-full bg-[#F8FAF7] text-[#0E2925] text-xs font-display font-bold hover:bg-white transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>{current.cta}</span>
                     <ArrowRight className="w-4 h-4" />
@@ -459,19 +459,19 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#0E2925]/95 via-[#0E2925]/85 to-transparent" />
 
         <div className="relative z-10 max-w-xl space-y-4 text-[#F8FAF7]">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#EAF7E6]">
+          <span className="text-xs font-display font-bold uppercase tracking-wider text-[#EAF7E6]">
             Seamless Integration
           </span>
-          <h2 className="text-3xl sm:text-5xl font-editorial text-white leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-display text-white leading-tight">
             Your Existing EHR & EMR. Our Billing Support Working Inside It.
           </h2>
           <p className="text-sm sm:text-base text-[#EAF7E6] leading-relaxed">
-            Apex works with the systems your practice already relies on, helping billing data move smoothly from documentation to claim submission, payment tracking, and reporting. Your team keeps its familiar workflow while gaining added revenue cycle support behind it.
+            APEX works with the systems your practice already relies on, helping billing data move smoothly from documentation to claim submission, payment tracking, and reporting. Your team keeps its familiar workflow while gaining added revenue cycle support behind it.
           </p>
           <div className="pt-2">
             <button
               onClick={onOpenAudit}
-              className="px-6 py-3 rounded-full bg-[#57B836] text-white text-xs font-semibold hover:bg-[#0E2925] transition-colors border border-[#EAF7E6]/30 inline-flex items-center gap-2 cursor-pointer"
+              className="px-6 py-3 rounded-full bg-[#57B836] text-white text-xs font-display font-bold hover:bg-[#0E2925] transition-colors border border-[#EAF7E6]/30 inline-flex items-center gap-2 cursor-pointer"
             >
               <span>Check Your EHR/EMR Compatibility</span>
               <ArrowRight className="w-4 h-4" />
@@ -483,11 +483,11 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
       {/* 4. Comparison Table (Apex vs In-House vs Typical Billing Companies) */}
       <section id="comparison" className="space-y-6 pt-4 scroll-mt-[calc(var(--dev-banner-height,0px)_+_6rem)]">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+          <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
             Strategic Comparison
           </span>
-          <h2 className="text-3xl sm:text-4xl font-editorial text-[#0E2925]">
-            How Apex Compares to Other Billing Models
+          <h2 className="text-3xl sm:text-4xl font-display text-[#0E2925]">
+            How APEX Compares to Other Billing Models
           </h2>
         </div>
 
@@ -497,7 +497,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
               <thead>
                 <tr className="border-b border-[#E2E7DF] bg-[#F8FAF7]">
                   <th className="p-4 sm:p-5 font-semibold text-[#1E2423]">Operational Dimension</th>
-                  <th className="p-4 sm:p-5 font-bold text-[#57B836] bg-[#57B836]/10">Apex Medical Billing</th>
+                  <th className="p-4 sm:p-5 font-bold text-[#57B836] bg-[#57B836]/10">APEX Medical Billing</th>
                   <th className="p-4 sm:p-5 font-semibold text-[#747773]">Traditional In-House Billing</th>
                   <th className="p-4 sm:p-5 font-semibold text-[#747773]">Typical Billing Companies / Market</th>
                 </tr>
@@ -520,13 +520,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
         </div>
 
         <p className="text-sm text-[#747773] text-center max-w-3xl mx-auto">
-          Apex combines measurable billing performance with end-to-end revenue cycle support, giving practices a structured alternative to managing billing entirely in-house or relying on limited outsourced services.
+          APEX combines measurable billing performance with end-to-end revenue cycle support, giving practices a structured alternative to managing billing entirely in-house or relying on limited outsourced services.
         </p>
       </section>
 
       {/* 5. Bottom Services CTA */}
       <section className="rounded-[32px] sm:rounded-[40px] bg-[#0E2925] text-[#F8FAF7] p-8 sm:p-14 text-center space-y-6">
-        <h2 className="text-3xl sm:text-4xl font-editorial text-white max-w-xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-display text-white max-w-xl mx-auto">
           See Where Revenue Is Getting Stuck in Your Practice.
         </h2>
         <p className="text-sm sm:text-base text-[#EAF7E6] max-w-lg mx-auto">
@@ -534,7 +534,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
         </p>
         <button
           onClick={onOpenAudit}
-          className="px-8 py-4 rounded-full bg-[#F8FAF7] text-[#0E2925] text-sm font-semibold hover:bg-white transition-all shadow-lg inline-flex items-center gap-2 cursor-pointer"
+          className="px-8 py-4 rounded-full bg-[#F8FAF7] text-[#0E2925] text-sm font-display font-bold hover:bg-white transition-all shadow-lg inline-flex items-center gap-2 cursor-pointer"
         >
           <span>Get a Free Practice Audit</span>
           <ArrowRight className="w-4 h-4" />

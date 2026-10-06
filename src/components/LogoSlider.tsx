@@ -43,10 +43,10 @@ export const LogoSlider: React.FC = () => {
         transition={{ duration: 0.7, ease: cubicEase }}
         className="text-center max-w-3xl mx-auto mb-8 space-y-2"
       >
-        <span className="text-xs font-semibold uppercase tracking-wider text-[#57B836]">
+        <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
           Platforms We Work With
         </span>
-        <h2 className="text-2xl sm:text-3xl font-editorial text-[#0E2925] text-balance">
+        <h2 className="text-2xl sm:text-3xl font-display text-[#0E2925] text-balance">
           Fluent in the EHR & Practice Management Systems You Already Use
         </h2>
       </motion.div>
