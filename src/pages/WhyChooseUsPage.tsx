@@ -19,86 +19,90 @@ interface WhyChooseUsPageProps {
 export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit }) => {
   const pillars = [
     {
-      title: '100% Onshore Certified Coders',
-      subtitle: 'AAPC & AHIMA Certified Specialists',
-      desc: 'We never outsource your clinical claims to overseas data entry pools. Every coder on your account is based in the United States and certified in your specific clinical discipline.',
+      title: '98% Clean Claim Rate',
+      subtitle: 'Measurable Billing Performance',
+      desc: 'Cleaner claims mean fewer preventable corrections and less time lost to rework. Our billing process focuses on getting claim details right before they reach the payer.',
+      tagline: 'Performance You Can Measure',
       icon: Award,
     },
     {
-      title: '48-Hour Denial Appeal Standard',
-      subtitle: 'Never Abandon Legitimate Revenue',
-      desc: 'Most billing services write off difficult denials or let them languish until timely filing deadlines expire. We investigate every CARC reason code and initiate clinical appeals within 48 hours.',
+      title: '48-Hour Denial Review',
+      subtitle: 'Faster Action on Denials',
+      desc: 'Denied claims should not sit without a next step. We review the issue, identify what needs attention, and assign the appropriate follow-up action within 48 hours.',
+      tagline: 'Every Denial Gets a Next Step',
       icon: ShieldCheck,
     },
     {
-      title: 'Zero Software Transition Friction',
-      subtitle: 'Works Inside Your Existing EHR',
-      desc: 'No expensive software licenses, no risky data migrations, and no front-desk retraining. We connect directly into your existing EHR and clearinghouse.',
+      title: 'No Forced Software Change',
+      subtitle: 'Works With Your Current Systems',
+      desc: 'APEX works within the EHR, EMR, and practice management systems your team already uses, helping you add billing support without rebuilding your workflow.',
+      tagline: 'Support That Fits Your Setup',
       icon: Compass,
     },
     {
-      title: 'Complete Financial Transparency',
-      subtitle: 'Line-Item Real-Time Visibility',
-      desc: 'No monthly black-box summary invoices. You have 24/7 visibility into every claim status, payer response, and bank deposit reconciliation.',
+      title: '24/7 Account Access',
+      subtitle: 'Clearer Revenue Visibility',
+      desc: 'Stay closer to your revenue cycle with ongoing access to billing information, claim activity, and account performance instead of waiting for occasional updates.',
+      tagline: 'Know Where Your Revenue Stands',
       icon: TrendingUp,
     },
   ];
 
   const comparisonRows = [
     {
-      feature: 'Clinical Coding Staff',
-      apex: '100% US-based AAPC & AHIMA certified specialists',
-      inHouse: 'Dependent on local hiring; vulnerable to turnover',
-      typicalAgency: 'Often offshored to uncertified data-entry pools',
+      feature: 'Clean Claim Performance',
+      apex: '98% clean claim rate',
+      inHouse: 'Depends on team capacity, experience, and workflow',
+      typicalAgency: '95–97%+ is considered a strong RCM target',
     },
     {
-      feature: 'First-Pass Clean Claim Rate',
-      apex: '98.2% average across all specialties',
-      inHouse: '78% – 85% national industry average',
-      typicalAgency: '82% – 88% with frequent scrubbing delays',
+      feature: 'Days in A/R',
+      apex: '25 days average',
+      inHouse: 'Depends on staffing and consistency of payer follow-up',
+      typicalAgency: '30–35 days is a strong RCM target',
     },
     {
-      feature: 'Denial Resolution Timeframe',
-      apex: 'Under 48 hours for CARC investigation and appeal',
-      inHouse: 'Often 14–30+ days due to daily clinic fire drills',
-      typicalAgency: 'Frequently ignored or written off as uncollectible',
+      feature: 'Denial Follow-Up',
+      apex: 'Next action within 48 hours',
+      inHouse: 'Often competes with other daily billing priorities',
+      typicalAgency: 'Process and turnaround vary by provider',
     },
     {
-      feature: 'Days in A/R (Accounts Receivable)',
-      apex: '24.6 days average across active practices',
-      inHouse: '45–65+ days industry average',
-      typicalAgency: '40–55 days with slow patient balance follow-up',
+      feature: 'Revenue Visibility',
+      apex: '24/7 account access',
+      inHouse: 'Limited to internal systems and staff availability',
+      typicalAgency: 'Depends on vendor reporting and platform access',
     },
     {
-      feature: 'EHR & Software Requirement',
-      apex: 'Zero software change; direct integration in your EHR',
-      inHouse: 'Existing system with internal maintenance costs',
-      typicalAgency: 'Often forces expensive third-party platform migrations',
+      feature: 'EHR / EMR Workflow',
+      apex: 'Works within your existing systems',
+      inHouse: 'Existing internal workflow',
+      typicalAgency: 'Integration capabilities vary by provider',
     },
     {
-      feature: 'Fee Structure & Alignment',
-      apex: 'Performance-based percentage of collections only',
-      inHouse: 'Fixed salaries, benefits, PTO, and training costs',
-      typicalAgency: 'High base retainers + hidden clearinghouse fees',
+      feature: 'Cost Structure',
+      apex: 'Starting at 2.99% of collections',
+      inHouse: 'Salaries, benefits, training, software, and staffing overhead',
+      typicalAgency: 'Commonly percentage-based; pricing varies by scope',
     },
   ];
 
   const podRoles = [
     {
-      role: 'Senior Account Director',
-      responsibility: 'Your direct point of contact for weekly revenue performance and payer escalations.',
+      role: 'Dedicated Account Manager',
+      responsibility: 'Your main point of contact for billing updates, priorities, reporting, and day-to-day revenue cycle questions.',
     },
     {
-      role: 'Certified Specialty Coder',
-      responsibility: 'Dedicated AAPC/AHIMA coder reviewing clinical notes, modifiers, and fee schedules.',
+      role: 'Medical Coding Specialist',
+      responsibility: 'Reviews documentation and coding details to support accurate ICD-10-CM, CPT, HCPCS, and modifier use.',
     },
     {
-      role: 'Electronic Claims Specialist',
-      responsibility: 'Manages clearinghouse rejections, scrub rules, and electronic batch submissions.',
+      role: 'Billing & Claims Specialist',
+      responsibility: 'Handles claim preparation, scrubbing, submission, payer responses, and issues that could delay processing.',
     },
     {
-      role: 'Payer A/R Specialist',
-      responsibility: 'Relentlessly chases aging insurance claims, resolves denials, and audits remittances.',
+      role: 'A/R & Denial Specialist',
+      responsibility: 'Works aging accounts and denied claims, follows up with payers, and keeps unresolved revenue moving.',
     },
   ];
 
@@ -127,13 +131,13 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
         className="text-center max-w-3xl mx-auto pt-6"
       >
         <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836] block mb-3">
-          Why Choose Us
+          Why Choose APEX
         </span>
         <h1 className="text-4xl sm:text-6xl font-display text-[#0E2925] leading-[1.1]">
-          Engineered to Maximize Practice Collections and Peace of Mind.
+          More Control Over Your Revenue. Less Billing Uncertainty.
         </h1>
         <p className="mt-4 text-lg sm:text-xl font-display font-light text-[#747773] leading-snug max-w-2xl mx-auto">
-          We combine certified onshore billing specialists, advanced claim-scrubbing technology, and aggressive denial appeals to give independent clinics unrivaled financial performance.
+          APEX gives healthcare practices clearer visibility, stronger accountability, and measurable performance across the revenue cycle, so you know what’s working, what needs attention, and what happens next.
         </p>
       </motion.section>
 
@@ -169,7 +173,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
 
               <div className="pt-6 mt-6 border-t border-[#E2E7DF] flex items-center gap-2 text-xs font-medium text-[#1E2423]">
                 <CheckCircle2 className="w-4 h-4 text-[#57B836]" />
-                <span>Guaranteed in our Service Level Agreement (SLA)</span>
+                <span>{p.tagline}</span>
               </div>
             </motion.div>
           );
@@ -183,10 +187,10 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
             Objective Comparison
           </span>
           <h2 className="text-3xl sm:text-4xl font-display text-[#0E2925]">
-            How APEX Compares to Traditional Options
+            How APEX Compares to Traditional Billing Options
           </h2>
           <p className="text-sm text-[#747773]">
-            See why independent practices switch from in-house billing and generic clearinghouse agencies to APEX.
+            See how APEX compares with managing billing in-house and working with a typical outsourced billing company.
           </p>
         </div>
 
@@ -204,7 +208,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
                   In-House Staff
                 </th>
                 <th className="p-5 sm:p-6 text-xs font-bold uppercase tracking-wider text-[#747773] w-1/5">
-                  Typical Billing Agency
+                  Typical Billing Companies / Market
                 </th>
               </tr>
             </thead>
@@ -231,19 +235,23 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
             </tbody>
           </table>
         </div>
+
+        <p className="text-sm text-[#747773] leading-relaxed text-center max-w-2xl mx-auto">
+          APEX combines measurable billing performance, ongoing visibility, and a flexible cost structure without requiring practices to build and manage every revenue cycle function internally.
+        </p>
       </section>
 
       {/* 4. Dedicated Pod Architecture */}
       <section className="rounded-[32px] sm:rounded-[40px] bg-white border border-[#E2E7DF] p-8 sm:p-12 shadow-sm space-y-8">
         <div className="max-w-2xl space-y-2">
           <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
-            Our Operating Model
+            Our Support Model
           </span>
           <h2 className="text-3xl sm:text-4xl font-display text-[#0E2925]">
-            Your Dedicated 4-Member Revenue Pod
+            A Billing Team That Knows Your Practice.
           </h2>
           <p className="text-sm text-[#747773] leading-relaxed">
-            Unlike call centers where anonymous agents touch random claims, APEX assigns a permanent, dedicated clinical billing pod to your practice.
+            APEX keeps the key parts of your revenue cycle connected, giving your team a consistent point of contact, clearer communication, and coordinated support across billing, coding, A/R, and denials.
           </p>
         </div>
 
@@ -254,7 +262,7 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
               className="rounded-2xl bg-[#F8FAF7] border border-[#E2E7DF] p-6 space-y-2"
             >
               <div className="w-8 h-8 rounded-xl bg-[#57B836]/10 text-[#57B836] flex items-center justify-center font-display font-bold text-xs">
-                {pIdx + 1}
+                {String(pIdx + 1).padStart(2, '0')}
               </div>
               <h3 className="text-sm text-[#0E2925] pt-1">{pod.role}</h3>
               <p className="text-xs text-[#747773] leading-relaxed">{pod.responsibility}</p>
@@ -267,10 +275,10 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
       <section className="space-y-6">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-display font-bold uppercase tracking-wider text-[#57B836]">
-            Verified Physician Feedback
+            Client Experiences
           </span>
           <h2 className="text-3xl sm:text-4xl font-display text-[#0E2925]">
-            Trusted by Practice Leaders Nationwide
+            What Practice Leaders Say About APEX
           </h2>
         </div>
 
@@ -297,37 +305,37 @@ export const WhyChooseUsPage: React.FC<WhyChooseUsPageProps> = ({ onOpenAudit })
       <section className="rounded-[32px] sm:rounded-[40px] bg-[#0E2925] text-white p-8 sm:p-14 text-center space-y-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div>
-            <div className="text-4xl sm:text-5xl font-display font-medium text-[#EAF7E6]">98.2%</div>
+            <div className="text-4xl sm:text-5xl font-display font-medium text-[#EAF7E6]">98%</div>
             <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Clean Claim Rate</div>
           </div>
           <div>
             <div className="text-4xl sm:text-5xl font-display font-medium text-[#EAF7E6]">&lt; 48 Hrs</div>
-            <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Denial Appeal SLA</div>
+            <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Denial Next Action</div>
           </div>
           <div>
-            <div className="text-4xl sm:text-5xl font-display font-medium text-[#EAF7E6]">24.6 Days</div>
+            <div className="text-4xl sm:text-5xl font-display font-medium text-[#EAF7E6]">25 Days</div>
             <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Average Days in A/R</div>
           </div>
           <div>
-            <div className="text-4xl sm:text-5xl font-display font-medium text-[#EAF7E6]">99.4%</div>
-            <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Client Retention</div>
+            <div className="text-4xl sm:text-5xl font-display font-medium text-[#EAF7E6]">25%</div>
+            <div className="text-xs text-white/70 uppercase tracking-wider mt-1">Revenue Increase</div>
           </div>
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={onOpenAudit}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#57B836] text-white text-xs font-display font-bold hover:bg-white hover:text-[#0E2925] transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <span>Claim Your Free Practice Audit</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
           <Link
             to="/contact-us"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#57B836] text-white text-xs font-display font-bold hover:bg-white hover:text-[#0E2925] transition-all shadow-md inline-flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>Schedule a 1:1 Meeting</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <button
+            onClick={onOpenAudit}
             className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/10 text-white text-xs font-display font-bold hover:bg-white/20 transition-all border border-white/20 inline-flex items-center justify-center gap-2 cursor-pointer"
           >
-            <span>Contact Us</span>
-          </Link>
+            <span>Get a Free Practice Audit</span>
+          </button>
         </div>
       </section>
     </div>
