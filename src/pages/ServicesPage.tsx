@@ -13,7 +13,8 @@ import {
   CheckCircle2,
   ShieldCheck,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Headset
 } from 'lucide-react';
 import techImg from '../assets/images/medical_technology_analytics_1790366089350.png';
 import { cubicEase, defaultViewport } from '../utils/animations';
@@ -228,6 +229,27 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
         'Better visibility makes it easier to see where revenue is moving, where it is slowing down, and which areas need action before small billing issues become larger financial gaps.',
       cta: 'Get a Free Revenue Performance Review',
     },
+    {
+      id: 'virtual-assistance',
+      number: '08',
+      title: 'Virtual Medical Assistance',
+      tagline: 'Remote Practice Admin Support',
+      icon: Headset,
+      description:
+        'We support routine administrative tasks that take time away from your in-house team, helping with scheduling, patient intake, insurance verification, referrals, and day-to-day follow-up.',
+      workflow: [
+        'Appointment scheduling, confirmations, and rescheduling',
+        'Patient intake and demographic updates',
+        'Insurance eligibility and benefits verification',
+        'Referral follow-up and routine administrative coordination',
+      ],
+      kpi: 'More Time Back for Your Practice Team',
+      turnaround: 'Support Aligned With Your Existing Workflow',
+      highlight:
+        'Routine admin can quickly fill your team’s day. Virtual medical assistance keeps essential tasks moving so staff can spend more time supporting patients and practice priorities.',
+      cta: 'Schedule a 1:1 Meeting',
+      ctaLink: '/contact-us',
+    },
   ];
 
   const benchmark = (value: string) => <strong className="font-semibold text-[#1E2423]">{value}</strong>;
@@ -240,7 +262,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
     { feature: 'Account Access', apex: '24/7 Access', inhouse: 'Depends on internal systems and availability', market: 'Depends on vendor platform' },
     { feature: 'EHR / EMR Compatibility', apex: 'Works within existing systems', inhouse: 'Uses the practice’s existing setup', market: 'Integration capabilities vary' },
     { feature: 'Billing Cost', apex: 'Starting at 2.99% of collections', inhouse: 'Salaries, benefits, training & technology overhead', market: <>Typically {benchmark('4–10% of collections')}</> },
-    { feature: 'Revenue Cycle Support', apex: '7 integrated service areas', inhouse: 'Depends on internal team capacity', market: 'Scope varies by provider and contract' },
+    { feature: 'Revenue Cycle Support', apex: '8 integrated service areas', inhouse: 'Depends on internal team capacity', market: 'Scope varies by provider and contract' },
   ];
 
   const current = services[selectedService];
@@ -429,13 +451,23 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenAudit }) => {
                 </div>
 
                 <div className="relative z-10 pt-2">
-                  <button
-                    onClick={onOpenAudit}
-                    className="w-full py-3.5 px-6 rounded-full bg-[#F8FAF7] text-[#0E2925] text-xs font-display font-bold hover:bg-white transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
-                  >
-                    <span>{current.cta}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
+                  {current.ctaLink ? (
+                    <Link
+                      to={current.ctaLink}
+                      className="w-full py-3.5 px-6 rounded-full bg-[#F8FAF7] text-[#0E2925] text-xs font-display font-bold hover:bg-white transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <span>{current.cta}</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={onOpenAudit}
+                      className="w-full py-3.5 px-6 rounded-full bg-[#F8FAF7] text-[#0E2925] text-xs font-display font-bold hover:bg-white transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <span>{current.cta}</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
