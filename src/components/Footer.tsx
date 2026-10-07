@@ -17,12 +17,14 @@ const pageLinks = [
 ];
 
 const serviceLinks = [
-  'Full Revenue Cycle',
-  'Medical Coding & Audit',
-  'Electronic Claim Scrubbing',
-  'Denial Management & Appeals',
-  'Aging A/R Recovery',
-  'Payment Reconciliation',
+  'Medical Billing & Claim Processing',
+  'Certified Medical Coding & Audits',
+  'Provider Credentialing & Payer Enrollment',
+  'Accounts Receivable (A/R) Recovery',
+  'Payment Posting & Daily Reconciliation',
+  'Denial Management & Root-Cause Appeals',
+  'Financial Analytics & Executive Reporting',
+  'Virtual Medical Assistance',
 ];
 
 export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
