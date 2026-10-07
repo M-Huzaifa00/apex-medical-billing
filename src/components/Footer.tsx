@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { ArrowRight, ShieldCheck, Mail, Phone } from 'lucide-react';
+import { ArrowRight, Mail, Phone } from 'lucide-react';
 import { ApexLogo } from './ApexLogo';
 
 interface FooterProps {
@@ -17,14 +17,23 @@ const pageLinks = [
 ];
 
 const serviceLinks = [
-  'Medical Billing & Claim Processing',
-  'Certified Medical Coding & Audits',
-  'Provider Credentialing & Payer Enrollment',
+  'Medical Billing',
+  'Certified Medical Coding',
+  'Provider Credentialing',
   'Accounts Receivable (A/R) Recovery',
-  'Payment Posting & Daily Reconciliation',
-  'Denial Management & Root-Cause Appeals',
-  'Financial Analytics & Executive Reporting',
+  'Payment Posting',
+  'Denial Management',
+  'Financial Analytics',
   'Virtual Medical Assistance',
+];
+
+const trustItems = [
+  '100% HIPAA-Compliant',
+  'Authorized Personnel',
+  'Secure Data Handling',
+  'Confidentiality Standards',
+  'Privacy Policy',
+  'Terms of Service',
 ];
 
 export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
@@ -44,11 +53,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
             </Link>
 
             <h3 className="text-3xl sm:text-4xl font-display text-white leading-tight max-w-md">
-              Our Foremost Priority is Your Business
+              Your Partner in Medical Billing.
             </h3>
 
             <p className="text-sm text-[#EAF7E6]/80 leading-relaxed max-w-sm">
-              We help healthcare practices manage billing, follow up on outstanding accounts, and spend less time on administrative work so patient care gets more of their attention.
+              We help healthcare practices manage billing, recover outstanding revenue, and reduce administrative work so their teams can stay focused on patient care.
             </p>
 
             <div className="pt-2">
@@ -62,10 +71,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
             </div>
 
             <div className="pt-4 space-y-2 text-xs text-white/60">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#EAF7E6]" />
-                <span>100% HIPAA-Compliant</span>
-              </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#EAF7E6]" />
                 <span>Provider Hotline: 305-380-3263</span>
@@ -117,12 +122,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
                 Security & Trust
               </span>
               <ul className="space-y-3 text-xs text-[#EAF7E6]">
-                <li><span className="text-white/60">HIPAA BAA Agreement</span></li>
-                <li><span className="text-white/60">SOC 2 Type II Certified</span></li>
-                <li><span className="text-white/60">AAPC Member Code</span></li>
-                <li><span className="text-white/60">AHIMA Standardized</span></li>
-                <li><span className="text-white/60">Privacy Policy</span></li>
-                <li><span className="text-white/60">Terms of Service</span></li>
+                {trustItems.map((item) => (
+                  <li key={item}><span className="text-white/60">{item}</span></li>
+                ))}
               </ul>
             </div>
           </div>
@@ -132,11 +134,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
           <p>© 2026 APEX Medical Billing LLC. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span>HIPAA-Certified</span>
+            <span>HIPAA-Compliant</span>
             <span>·</span>
-            <span>AAPC & AHIMA Affiliated</span>
+            <span>Authorized Access</span>
             <span>·</span>
-            <span>Built for Independent Healthcare</span>
+            <span>Built for Healthcare Practices</span>
           </div>
         </div>
       </div>
