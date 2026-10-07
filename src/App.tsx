@@ -31,7 +31,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#F8FAF7] text-[#1E2423] selection:bg-[#57B836] selection:text-[#F8FAF7] flex flex-col">
       {/* Temporary Development Notice */}
-      <DevBanner />
+      {/* <DevBanner /> */}
 
       {/* Floating Minimal Navigation */}
       <Navbar onOpenAudit={handleOpenAudit} />
